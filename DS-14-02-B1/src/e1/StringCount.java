@@ -2,14 +2,15 @@ package e1;
 
 public class StringCount {
 
-/** * Counts the number of words in a given String.
+/**
+ * Counts the number of words in a given String.
 * Words are groups of characters separated by one or more spaces.
 *
 * @param text String with the words
 * @return Number of words in the String or zero if it is null
 */
 public static int countWords (String text) {
-
+    return text.split(" ").length;
 }
 
 /**
@@ -20,10 +21,11 @@ public static int countWords (String text) {
 * @return Number of times the character appears in the String or zero if null
 */
 public static int countChar(String text , char c) {
-
+    return 0;
 }
 
-/** * Counts the number of times the given character appears in the String.
+/**
+ * Counts the number of times the given character appears in the String.
 * The case is ignored so an ’a’ is equal to an ’A ’.
 * Accented characters are considered different characters .
 * @param text String with the characters
@@ -31,7 +33,7 @@ public static int countChar(String text , char c) {
 * @return Number of times the character appears in the String or zero if null
 */
 public static int countCharIgnoringCase (String text , char c) {
-
+    return 0;
 }
 
 /**
@@ -45,7 +47,7 @@ public static int countCharIgnoringCase (String text , char c) {
  * @return true if the password is safe , false otherwise
  */
 public static boolean isPasswordSafe (String password) {
-
+    return 0;
 }
 
 }
