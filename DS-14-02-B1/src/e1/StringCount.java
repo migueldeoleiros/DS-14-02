@@ -10,7 +10,16 @@ public class StringCount {
 * @return Number of words in the String or zero if it is null
 */
 public static int countWords (String text) {
-    return text.split(" ").length;
+    int count = 0;
+    if(text != null){
+        String words[] = text.split(" ");
+        for(int i=0; i == words.length; i++){
+            if ( equals(words[i], " ")){
+                count ++;
+            }
+        }
+    }
+    return count;
 }
 
 /**
