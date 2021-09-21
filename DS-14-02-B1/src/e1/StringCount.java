@@ -47,7 +47,7 @@ public static int countCharIgnoringCase (String text , char c) {
  * @return true if the password is safe , false otherwise
  */
 public static boolean isPasswordSafe (String password) {
-    return 0;
+    return true;
 }
 
 }
