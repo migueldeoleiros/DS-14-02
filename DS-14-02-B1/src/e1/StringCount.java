@@ -30,7 +30,14 @@ public static int countWords (String text) {
 * @return Number of times the character appears in the String or zero if null
 */
 public static int countChar(String text , char c) {
-    return 0;
+    int count = 0;
+
+    for(int i=0; i < str.length(); i++)
+    {    if(str.charAt(i) == c)
+            count++;
+    }
+
+    return count;
 }
 
 /**
@@ -42,7 +49,16 @@ public static int countChar(String text , char c) {
 * @return Number of times the character appears in the String or zero if null
 */
 public static int countCharIgnoringCase (String text , char c) {
-    return 0;
+    int count =0;
+
+    for(int i=0; i < str.length(); i++){
+        if(str.charAt(i) == c) count++;
+    }
+    for(int i=0; i < str.length(); i++){
+        if(str.charAt(i) == Character.toUpperCase(c)) count++;
+    }
+
+    return count;
 }
 
 /**
@@ -56,7 +72,29 @@ public static int countCharIgnoringCase (String text , char c) {
  * @return true if the password is safe , false otherwise
  */
 public static boolean isPasswordSafe (String password) {
-    return true;
+    if(str.length(password)<=8){
+        int countNum =0, countUp =0, countLow =0, countSpe =0;
+
+        for(int i=0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if(c >= '0' && c <= '9' ) countNum++;
+        }
+        for(int i=0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if(c >= 'a' && c <= 'z' ) countLow++;
+        }
+        for(int i=0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if(c >= 'A' && c <= 'Z' ) countUp++;
+        }
+        for(int i=0; i < str.length(); i++){
+            char c = str.charAt(i);
+            if(c == '?' || c == '@' || c == '#' || c == '$' || c == '.' || c == ',' ) countSpe++;
+        }
+
+        if(countSpe < 1 && countUp < 1 && countLow < 1 && countNum < 1) return true;
+        return false;
+    }
 }
 
 }
