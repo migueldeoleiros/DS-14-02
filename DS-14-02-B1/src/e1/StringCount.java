@@ -12,12 +12,13 @@ public class StringCount {
 public static int countWords (String text) {
     int count = 0;
     if(text != null){
-        String words[] = text.split(" ");
-        for(int i=0; i != words.length; i++){
-            if ( words[i] == " "){
-                count ++;
-            }
+        if(text.charAt(0) != ' ') count =1;
+        for(int i=0; i < text.length(); i++){
+            if(text.charAt(i) == ' ')
+                if(text.charAt(i+1) != ' ')
+                    count++;
         }
+
     }
     return count;
 }
@@ -51,11 +52,13 @@ public static int countChar(String text , char c) {
 public static int countCharIgnoringCase (String text , char c) {
     int count =0;
 
-    for(int i=0; i < text.length(); i++){
-        if(text.charAt(i) == c) count++;
-    }
-    for(int i=0; i < text.length(); i++){
-        if(text.charAt(i) == Character.toUpperCase(c)) count++;
+    if(text != null) {
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == c) count++;
+        }
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == Character.toUpperCase(c)) count++;
+        }
     }
 
     return count;
@@ -72,7 +75,7 @@ public static int countCharIgnoringCase (String text , char c) {
  * @return true if the password is safe , false otherwise
  */
 public static boolean isPasswordSafe (String password) {
-    if(password.length()<=8){
+    if(password.length()>=8){
         int countNum =0, countUp =0, countLow =0, countSpe =0;
 
         for(int i=0; i < password.length(); i++){
@@ -92,7 +95,7 @@ public static boolean isPasswordSafe (String password) {
             if(c == '?' || c == '@' || c == '#' || c == '$' || c == '.' || c == ',' ) countSpe++;
         }
 
-        return countSpe < 1 && countUp < 1 && countLow < 1 && countNum < 1;
+        return (countSpe != 0 && countUp != 0 && countLow != 0 && countNum != 0);
     }
     return false;
 }
