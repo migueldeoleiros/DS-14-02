@@ -1,6 +1,6 @@
 package e2;
 
-public class Descenso {
+public class Slopes {
     /**
      * Traverses the slope map making the right and down movements and
      * returns the number of trees found along the way.
@@ -16,8 +16,15 @@ public class Descenso {
      *  - down >= number of rows of the matrix or down < 1
      */
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
-        int treeNum =0 ;
-
+        int treeNum =0;
+        int row, col;
+        for(row=0; row < slopeMap.length; row++){
+            if(row%right == 0)break;
+            for(col=0; col < slopeMap[row].length; col++){
+                if(col%right == 0)break;
+                if(slopeMap[row][col] == '#') treeNum++;
+            }
+        }
         return treeNum;
     }
 
@@ -30,8 +37,13 @@ public class Descenso {
      * Params , return value and thrown expections as in downTheSlope ...
      */
     public static int jumpTheSlope(char[][] slopeMap, int right, int down) {
-        int treeNum =0 ;
-
+        int treeNum =0;
+        int row, col;
+        for(row=0; row < slopeMap.length; row++){
+            for(col=0; col < slopeMap[row].length; col++){
+                if(slopeMap[row][col] == '#') treeNum++;
+            }
+        }
         return treeNum;
     }
 }
