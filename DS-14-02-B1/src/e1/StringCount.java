@@ -13,8 +13,8 @@ public static int countWords (String text) {
     int count = 0;
     if(text != null){
         String words[] = text.split(" ");
-        for(int i=0; i == words.length; i++){
-            if ( equals(words[i], " ")){
+        for(int i=0; i != words.length; i++){
+            if ( words[i] == " "){
                 count ++;
             }
         }
