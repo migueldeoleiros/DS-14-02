@@ -17,13 +17,27 @@ public class Slopes {
      */
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
         int treeNum =0;
-        int row, col;
-        for(row=0; row < slopeMap.length; row++){
-            if(row%right == 0)break;
-            for(col=0; col < slopeMap[row].length; col++){
-                if(col%right == 0)break;
-                if(slopeMap[row][col] == '#') treeNum++;
+        int row=0, col=0;
+        int x=0,y=0;
+        int n=0;
+        if(right<1 || down<1 || slopeMap.length != slopeMap[row].length )throw new IllegalArgumentException();
+        while(row < slopeMap.length) {
+            for(x=0;x<right;x++){
+                if (slopeMap[row][col] == '#') treeNum++;
+                if(col < slopeMap[row].length-1){
+                    col++;
+                }
+                else col=0;
             }
+            for(y=0;y<down;y++) {
+                if (slopeMap[row][col] == '#') treeNum++;
+                if(row < slopeMap.length-1){
+                    row++;
+                }else{
+                    n=1;break;
+                }
+            }
+            if(n==1)break;
         }
         return treeNum;
     }
@@ -38,10 +52,10 @@ public class Slopes {
      */
     public static int jumpTheSlope(char[][] slopeMap, int right, int down) {
         int treeNum =0;
-        int row, col;
+        int row=0, col=0;
         for(row=0; row < slopeMap.length; row++){
-            for(col=0; col < slopeMap[row].length; col++){
-                if(slopeMap[row][col] == '#') treeNum++;
+            for(col=0; col < slopeMap[row].length; col++) {
+                if (slopeMap[row][col] == '#') treeNum++;
             }
         }
         return treeNum;
