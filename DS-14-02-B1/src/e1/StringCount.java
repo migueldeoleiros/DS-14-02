@@ -32,8 +32,8 @@ public static int countWords (String text) {
 public static int countChar(String text , char c) {
     int count = 0;
 
-    for(int i=0; i < str.length(); i++)
-    {    if(str.charAt(i) == c)
+    for(int i=0; i < text.length(); i++)
+    {    if(text.charAt(i) == c)
             count++;
     }
 
@@ -51,11 +51,11 @@ public static int countChar(String text , char c) {
 public static int countCharIgnoringCase (String text , char c) {
     int count =0;
 
-    for(int i=0; i < str.length(); i++){
-        if(str.charAt(i) == c) count++;
+    for(int i=0; i < text.length(); i++){
+        if(text.charAt(i) == c) count++;
     }
-    for(int i=0; i < str.length(); i++){
-        if(str.charAt(i) == Character.toUpperCase(c)) count++;
+    for(int i=0; i < text.length(); i++){
+        if(text.charAt(i) == Character.toUpperCase(c)) count++;
     }
 
     return count;
@@ -72,29 +72,29 @@ public static int countCharIgnoringCase (String text , char c) {
  * @return true if the password is safe , false otherwise
  */
 public static boolean isPasswordSafe (String password) {
-    if(str.length(password)<=8){
+    if(password.length()<=8){
         int countNum =0, countUp =0, countLow =0, countSpe =0;
 
-        for(int i=0; i < str.length(); i++){
-            char c = str.charAt(i);
+        for(int i=0; i < password.length(); i++){
+            char c = password.charAt(i);
             if(c >= '0' && c <= '9' ) countNum++;
         }
-        for(int i=0; i < str.length(); i++){
-            char c = str.charAt(i);
+        for(int i=0; i < password.length(); i++){
+            char c = password.charAt(i);
             if(c >= 'a' && c <= 'z' ) countLow++;
         }
-        for(int i=0; i < str.length(); i++){
-            char c = str.charAt(i);
+        for(int i=0; i < password.length(); i++){
+            char c = password.charAt(i);
             if(c >= 'A' && c <= 'Z' ) countUp++;
         }
-        for(int i=0; i < str.length(); i++){
-            char c = str.charAt(i);
+        for(int i=0; i < password.length(); i++){
+            char c = password.charAt(i);
             if(c == '?' || c == '@' || c == '#' || c == '$' || c == '.' || c == ',' ) countSpe++;
         }
 
-        if(countSpe < 1 && countUp < 1 && countLow < 1 && countNum < 1) return true;
-        return false;
+        return countSpe < 1 && countUp < 1 && countLow < 1 && countNum < 1;
     }
+    return false;
 }
 
 }
