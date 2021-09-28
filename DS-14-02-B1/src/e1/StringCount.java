@@ -14,10 +14,10 @@ public class StringCount {
         if (text != null) {
             if (text.charAt(0) != ' ') count++;
             for (int i = 0; i < text.length(); i++) {
+                text = text.stripTrailing();
                 if (text.charAt(i) == ' ' && text.charAt(i + 1) != ' ')
                     count++;
             }
-
         }
         return count;
     }

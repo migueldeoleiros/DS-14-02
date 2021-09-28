@@ -16,7 +16,9 @@ public class Descenso {
      *  - down >= number of rows of the matrix or down < 1
      */
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
+        int treeNum =0 ;
 
+        return treeNum;
     }
 
     /**
@@ -28,6 +30,8 @@ public class Descenso {
      * Params , return value and thrown expections as in downTheSlope ...
      */
     public static int jumpTheSlope(char[][] slopeMap, int right, int down) {
+        int treeNum =0 ;
 
+        return treeNum;
     }
 }
