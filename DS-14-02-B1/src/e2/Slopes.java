@@ -19,8 +19,15 @@ public class Slopes {
         int treeNum =0;
         int row=0, col=0;
         int n=0;
-        if(right<1 || down<1 || slopeMap.length != slopeMap[row].length )throw new IllegalArgumentException();
+        if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1 )
+            throw new IllegalArgumentException();
+        for (int i=0; i<slopeMap.length; i++){
+            if(slopeMap.length != slopeMap[i].length)
+                throw new IllegalArgumentException();
+        }
         while(row < slopeMap.length) {
+            if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
+                throw new IllegalArgumentException();
             for(int x=0;x<right;x++){
                 if (slopeMap[row][col] == '#') treeNum++;
                 if(col < slopeMap[row].length-1){
@@ -53,7 +60,15 @@ public class Slopes {
         int treeNum =0;
         int row=0, col=0;
         int n=0;
+        if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1 )
+            throw new IllegalArgumentException();
+        for (int i=0; i<slopeMap.length; i++){
+            if(slopeMap.length != slopeMap[i].length)
+                throw new IllegalArgumentException();
+        }
         while(row < slopeMap.length) {
+            if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
+                throw new IllegalArgumentException();
             if (slopeMap[row][col] == '#') treeNum++;
             for(int x=0;x<right;x++){
                 if(col < slopeMap[row].length-1){
