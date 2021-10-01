@@ -1,18 +1,26 @@
 package e3;
 
 public class Note{
-    enum Notes {DO,RE,MI,FA,SOL,LA,SI};
-    enum Accidentals {NATURAL,SHARP,FLAT};
+    public Melody.Notes note;
+    public Melody.Accidentals accidental;
+    public float time;
 
-    Notes note;
-    Accidentals accidental;
-    float time;
-
-    public Note(Notes note, Accidentals accidental, float time){
+    public void setNote(Melody.Notes note, Melody.Accidentals accidental, float time) {
         this.note = note;
         this.accidental = accidental;
         this.time = time;
     }
 
+    public Melody.Notes getNote() {
+        return note;
+    }
+
+    public Melody.Accidentals getAccidental() {
+        return accidental;
+    }
+
+    public float getTime() {
+        return time;
+    }
 };
 

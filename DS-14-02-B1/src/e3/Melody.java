@@ -1,12 +1,20 @@
 package e3;
 
+import e3.Note.*;
+
 public class Melody {
+    private final int SIZE = 20;
+
+    enum Notes {DO,RE,MI,FA,SOL,LA,SI};
+    enum Accidentals {NATURAL,SHARP,FLAT};
+
+    Note[] melody = new Note[SIZE];
 
     /**
      * Creates an empty Melody instance.
      */
     public Melody() {
-        Note[] melody;
+
     }
 
     /**
@@ -19,8 +27,15 @@ public class Melody {
      *                                  or the time are not valid values.
      */
     public void addNote(Notes note, Accidentals accidental, float time) {
-        Melody melodia = new Melody();
-
+        Note note1 = new Note();
+        note1.setNote(note, accidental, time);
+        Note foo;
+        for(int i=0; i < melody.length; i++){
+            foo = melody[i];
+            if(foo.getTime()!= 0){
+                melody[i-1] = note1;
+            }
+        }
     }
 
     /**
@@ -31,8 +46,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Notes getNote(int index) {
-
-        return note;
+        return melody[index].getNote();
     }
 
     /**
@@ -43,7 +57,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Accidentals getAccidental(int index) {
-
+        return melody[index].getAccidental();
     }
 
     /**
@@ -54,7 +68,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public float getTime(int index) {
-
+        return melody[index].getTime();
     }
 
     /**
@@ -63,7 +77,7 @@ public class Melody {
      * @return The number of notes in this melody.
      */
     public int size() {
-
+        return melody.length;
     }
 
     /**
@@ -72,7 +86,13 @@ public class Melody {
      * @return The duration of this melody in milliseconds .
      */
     public float getDuration() {
+        int totalTime=0;
 
+        for(Note i : melody){
+            totalTime += i.getTime();
+        }
+
+        return totalTime;
     }
 
     /**
