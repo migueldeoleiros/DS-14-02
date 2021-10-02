@@ -129,7 +129,6 @@ public class Melody {
      */
     @Override
     public String toString() {
-{
 
     }
 }

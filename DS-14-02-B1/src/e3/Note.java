@@ -52,7 +52,10 @@ public class Note{
 
     @Override
     public int hashCode() {
-        return Objects.hash(note, accidental, time);
+        Note note1 = new Note();
+        note1.setNote(note,accidental,time);
+
+        return Objects.hash(transform(note1));
     }
 
 };
