@@ -1,12 +1,10 @@
 package e3;
 
-import e3.Note.*;
-
 public class Melody {
     private final int SIZE = 20;
 
-    enum Notes {DO,RE,MI,FA,SOL,LA,SI};
-    enum Accidentals {NATURAL,SHARP,FLAT};
+    enum Notes {DO,RE,MI,FA,SOL,LA,SI}
+    enum Accidentals {NATURAL,SHARP,FLAT}
 
     Note[] melody = new Note[SIZE];
 
@@ -77,7 +75,13 @@ public class Melody {
      * @return The number of notes in this melody.
      */
     public int size() {
-        return melody.length;
+        int size=0;
+        for(Note i : melody){
+            if (i.time != 0){
+                size++;
+            }
+        }
+        return size;
     }
 
     /**
@@ -125,6 +129,7 @@ public class Melody {
      */
     @Override
     public String toString() {
+{
 
     }
 }
