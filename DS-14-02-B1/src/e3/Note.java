@@ -27,13 +27,21 @@ public class Note{
 
     public Note transform(Note nota){
         Note nota1 = new Note();
-        if(note == Melody.Notes.RE && accidental == Melody.Accidentals.FLAT ){
-            setNote(Melody.Notes.DO, Melody.Accidentals.SHARP, nota.time);
-        }
-        if(note == Melody.Notes.MI && accidental == Melody.Accidentals.FLAT ){
-            setNote(Melody.Notes.RE, Melody.Accidentals.SHARP, nota.time);
-        }
-
+        if (note== Melody.Notes.RE && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
+        else if (note== Melody.Notes.MI && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.RE, Melody.Accidentals.SHARP,time);
+        else if (note== Melody.Notes.FA && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.MI, Melody.Accidentals.NATURAL,time);
+        else if (note== Melody.Notes.SOL && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.FA, Melody.Accidentals.SHARP,time);
+        else if (note== Melody.Notes.LA && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.SOL, Melody.Accidentals.SHARP,time);
+        else if (note== Melody.Notes.SI && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.LA, Melody.Accidentals.SHARP,time);
+        else if (note== Melody.Notes.DO && accidental == Melody.Accidentals.FLAT)
+            setNote(Melody.Notes.SI, Melody.Accidentals.NATURAL,time);
+        else nota1 = nota;
         return nota1;
     }
 
@@ -59,4 +67,3 @@ public class Note{
     }
 
 };
-
