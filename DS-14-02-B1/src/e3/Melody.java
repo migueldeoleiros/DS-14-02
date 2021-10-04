@@ -1,12 +1,14 @@
 package e3;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class Melody {
-    private final int SIZE = 20;
 
     enum Notes {DO,RE,MI,FA,SOL,LA,SI}
     enum Accidentals {NATURAL,SHARP,FLAT}
 
-    Note[] melody = new Note[SIZE];
+    ArrayList<Note> melody = new ArrayList<>();
 
     /**
      * Creates an empty Melody instance.
@@ -25,15 +27,9 @@ public class Melody {
      *                                  or the time are not valid values.
      */
     public void addNote(Notes note, Accidentals accidental, float time) {
-        Note note1 = new Note();
-        note1.setNote(note, accidental, time);
-        Note foo;
-        for(int i=0; i < melody.length; i++){
-            foo = melody[i];
-            if(foo.getTime()!= 0){
-                melody[i-1] = note1;
-            }
-        }
+        Note nota = new Note();
+        nota.setNote(note, accidental, time);
+        melody.add(nota);
     }
 
     /**
@@ -44,7 +40,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Notes getNote(int index) {
-        return melody[index].getNote();
+        return melody.get(index).getNote();
     }
 
     /**
@@ -55,7 +51,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Accidentals getAccidental(int index) {
-        return melody[index].getAccidental();
+        return melody.get(index).getAccidental();
     }
 
     /**
@@ -66,7 +62,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public float getTime(int index) {
-        return melody[index].getTime();
+        return melody.get(index).getTime();
     }
 
     /**
@@ -75,13 +71,7 @@ public class Melody {
      * @return The number of notes in this melody.
      */
     public int size() {
-        int size=0;
-        for(Note i : melody){
-            if (i.time != 0){
-                size++;
-            }
-        }
-        return size;
+        return melody.size();
     }
 
     /**
@@ -90,7 +80,7 @@ public class Melody {
      * @return The duration of this melody in milliseconds .
      */
     public float getDuration() {
-        int totalTime=0;
+        float totalTime=0;
 
         for(Note i : melody){
             totalTime += i.getTime();
@@ -107,7 +97,13 @@ public class Melody {
      */
     @Override
     public boolean equals(Object o) {
-
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Melody melody1 = (Melody) o;
+        for(int i=0; i < melody.size(); i++){
+            if(!melody.get(i).equals(melody1.melody.get(i)))return false;
+        }
+        return true;
     }
 
     /**
@@ -119,8 +115,14 @@ public class Melody {
      */
     @Override
     public int hashCode() {
-
+        int hash = 0;
+        for(Note i: melody){
+            hash += i.hashCode();
+        }
+        return hash;
     }
+
+
 
     /**
      * The string representation of this melody.
@@ -129,6 +131,11 @@ public class Melody {
      */
     @Override
     public String toString() {
+        String melodyString ="";
+        for(Note i: melody){
+            melodyString += ("\n" + i.toString());
+        }
 
+        return melodyString;
     }
 }

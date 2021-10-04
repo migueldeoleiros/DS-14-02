@@ -60,10 +60,43 @@ public class Note{
 
     @Override
     public int hashCode() {
+        int hash=0;
         Note note1 = new Note();
+        Note note2 = new Note();
         note1.setNote(note,accidental,time);
+        note2 = transform(note1);
+        switch (note1.note) {
+            case DO:
+                hash = +1;
+                break;
+            case RE:
+                hash = +2;
+                break;
+            case MI:
+                hash = +3;
+                break;
+            case FA:
+                hash = +4;
+                break;
+            case SOL:
+                hash = +5;
+                break;
+            case LA:
+                hash = +6;
+                break;
+            case SI:
+                hash = +7;
+                break;
+        }
+        if(note1.accidental == accidental.SHARP)
+            hash += 7;
 
-        return Objects.hash(transform(note1));
+        hash += (note1.time*100);
+
+        return hash;
     }
 
+    public String toString(){
+        return note.toString() + accidental.toString() + time;
+    }
 };
