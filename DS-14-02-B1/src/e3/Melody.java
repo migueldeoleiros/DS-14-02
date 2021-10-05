@@ -133,9 +133,9 @@ public class Melody {
     public String toString() {
         String melodyString ="";
         for(Note i: melody){
-            melodyString += ("\n" + i.toString());
+            melodyString += (i.toString() + " ");
         }
 
-        return melodyString;
+        return melodyString.stripTrailing();
     }
 }

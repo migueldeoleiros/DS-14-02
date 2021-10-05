@@ -28,19 +28,23 @@ public class Note{
     public Note transform(Note nota){
         Note nota1 = new Note();
         if (note== Melody.Notes.RE && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
+            nota1.setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
         else if (note== Melody.Notes.MI && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.RE, Melody.Accidentals.SHARP,time);
+            nota1.setNote(Melody.Notes.RE, Melody.Accidentals.SHARP,time);
         else if (note== Melody.Notes.FA && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.MI, Melody.Accidentals.NATURAL,time);
+            nota1.setNote(Melody.Notes.MI, Melody.Accidentals.NATURAL,time);
         else if (note== Melody.Notes.SOL && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.FA, Melody.Accidentals.SHARP,time);
+            nota1.setNote(Melody.Notes.FA, Melody.Accidentals.SHARP,time);
         else if (note== Melody.Notes.LA && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.SOL, Melody.Accidentals.SHARP,time);
+            nota1.setNote(Melody.Notes.SOL, Melody.Accidentals.SHARP,time);
         else if (note== Melody.Notes.SI && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.LA, Melody.Accidentals.SHARP,time);
+            nota1.setNote(Melody.Notes.LA, Melody.Accidentals.SHARP,time);
         else if (note== Melody.Notes.DO && accidental == Melody.Accidentals.FLAT)
-            setNote(Melody.Notes.SI, Melody.Accidentals.NATURAL,time);
+            nota1.setNote(Melody.Notes.SI, Melody.Accidentals.NATURAL,time);
+        else if (note== Melody.Notes.MI && accidental == Melody.Accidentals.SHARP)
+            nota1.setNote(Melody.Notes.FA, Melody.Accidentals.NATURAL,time);
+        else if (note== Melody.Notes.SI && accidental == Melody.Accidentals.SHARP)
+            nota1.setNote(Melody.Notes.DO, Melody.Accidentals.NATURAL,time);
         else nota1 = nota;
         return nota1;
     }
@@ -65,7 +69,7 @@ public class Note{
         Note note2 = new Note();
         note1.setNote(note,accidental,time);
         note2 = transform(note1);
-        switch (note1.note) {
+        switch (note2.note) {
             case DO:
                 hash = +1;
                 break;
@@ -97,6 +101,16 @@ public class Note{
     }
 
     public String toString(){
-        return note.toString() + accidental.toString() + time;
+        String accidentalStr;
+        Note note1 = new Note();
+        Note note2 = new Note();
+        note1.setNote(note,accidental,time);
+        note2 = transform(note1);
+
+        if(note2.accidental == accidental.SHARP) accidentalStr = "#";
+        else if(note2.accidental == accidental.FLAT) accidentalStr = "b";
+        else accidentalStr = "";
+
+        return note2.note.toString()+accidentalStr+"("+note2.time+")";
     }
 };
