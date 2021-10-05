@@ -1,7 +1,5 @@
 package e3;
 
-import java.util.Objects;
-
 public class Note{
     public Melody.Notes note;
     public Melody.Accidentals accidental;
@@ -92,25 +90,21 @@ public class Note{
                 hash = +7;
                 break;
         }
-        if(note1.accidental == accidental.SHARP)
+        if(note2.accidental == accidental.SHARP)
             hash += 7;
 
-        hash += (note1.time*100);
+        hash += (note2.time*100);
 
         return hash;
     }
 
     public String toString(){
         String accidentalStr;
-        Note note1 = new Note();
-        Note note2 = new Note();
-        note1.setNote(note,accidental,time);
-        note2 = transform(note1);
 
-        if(note2.accidental == accidental.SHARP) accidentalStr = "#";
-        else if(note2.accidental == accidental.FLAT) accidentalStr = "b";
+        if(accidental == accidental.SHARP) accidentalStr = "#";
+        else if(accidental == accidental.FLAT) accidentalStr = "b";
         else accidentalStr = "";
 
-        return note2.note.toString()+accidentalStr+"("+note2.time+")";
+        return note.toString()+accidentalStr+"("+time+")";
     }
 };

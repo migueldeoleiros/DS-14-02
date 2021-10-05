@@ -1,7 +1,6 @@
 package e3;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Melody {
 
