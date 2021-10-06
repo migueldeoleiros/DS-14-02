@@ -7,24 +7,25 @@ public class Note{
     public Melody.Accidentals accidental;
     public float time;
 
+    //Initializes note fields
     public void setNote(Melody.Notes note, Melody.Accidentals accidental, float time) {
         this.note = note;
         this.accidental = accidental;
         this.time = time;
     }
-
+    //Returns the note
     public Melody.Notes getNote() {
         return note;
     }
-
+    //Returns note´s accidental
     public Melody.Accidentals getAccidental() {
         return accidental;
     }
-
+    //Returns note´s duration
     public float getTime() {
         return time;
     }
-
+    //Transforms FLAT notes into their matching SHARP/NATURAL notes
     private void transform(Note nota){
         if (note== Melody.Notes.RE && accidental == Melody.Accidentals.FLAT) //DO# = REb
             nota.setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
@@ -46,7 +47,7 @@ public class Note{
             nota.setNote(Melody.Notes.DO, Melody.Accidentals.NATURAL,time);
         else nota.setNote(note,accidental,time);
     }
-
+    //Checks if two notes are equivalents
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,7 +67,7 @@ public class Note{
 
        return false;
     }
-
+    //Returns an integer that is a HashCode representation of the note
     @Override
     public int hashCode() {
         int hash=0;
@@ -83,7 +84,7 @@ public class Note{
 
         return hash;
     }
-
+    //String representation of the note
     public String toString(){
         String accidentalStr;
 
