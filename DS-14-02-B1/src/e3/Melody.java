@@ -122,20 +122,18 @@ public class Melody {
         return hash;
     }
 
-
-
     /**
      * The string representation of this melody.
      *
-     * @return The String representantion of this melody.
+     * @return The String representation of this melody.
      */
     @Override
     public String toString() {
-        String melodyString ="";
+        StringBuilder melodyString = new StringBuilder();
         for(Note i: melody){
-            melodyString += (i.toString() + " ");
+            melodyString.append(i.toString()).append(" ");
         }
 
-        return melodyString.stripTrailing();
+        return melodyString.toString().stripTrailing();
     }
 }

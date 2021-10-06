@@ -21,8 +21,8 @@ public class Slopes {
         int n=0;
         if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1 )
             throw new IllegalArgumentException();
-        for (int i=0; i<slopeMap.length; i++){
-            if(slopeMap.length != slopeMap[i].length)
+        for (char[] chars : slopeMap) {
+            if (slopeMap.length != chars.length)
                 throw new IllegalArgumentException();
         }
         while(row < slopeMap.length) {
@@ -54,7 +54,7 @@ public class Slopes {
      * Since it "jumps" from the initial position to the final position ,
      * only takes into account the trees on those initial/final positions.
      * <p>
-     * Params , return value and thrown expections as in downTheSlope ...
+     * Params , return value and thrown exceptions as in downTheSlope ...
      */
     public static int jumpTheSlope(char[][] slopeMap, int right, int down) {
         int treeNum =0;
@@ -62,8 +62,8 @@ public class Slopes {
         int n=0;
         if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1 )
             throw new IllegalArgumentException();
-        for (int i=0; i<slopeMap.length; i++){
-            if(slopeMap.length != slopeMap[i].length)
+        for (char[] chars : slopeMap) {
+            if (slopeMap.length != chars.length)
                 throw new IllegalArgumentException();
         }
         while(row < slopeMap.length) {

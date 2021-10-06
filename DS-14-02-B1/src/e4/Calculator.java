@@ -27,6 +27,13 @@ public class Calculator {
     ArrayList<Operator> operations = new ArrayList<>();
     ArrayList<Float> numbers = new ArrayList<>();
 
+    /**
+     * Transforms type Operator to string type.
+     *
+     * @param str string to transform
+     * @return equivalent Operator type
+     * @throws IllegalArgumentException if the operator doesn't exist
+     */
     private Operator toOperator(String str){
         switch (str){
             case "+":
@@ -52,8 +59,8 @@ public class Calculator {
      * Clean the internal state of the calculator
      */
     public void cleanOperations() {
-        this.operations = new ArrayList<>();
-        this.numbers = new ArrayList<>();
+        this.operations.clear();
+        this.numbers.clear();
     }
 
     /**
@@ -118,12 +125,12 @@ public class Calculator {
      */
     @Override
     public String toString() {
-        String screen="[STATE:";
+        StringBuilder screen= new StringBuilder("[STATE:");
         if(operations.size() != 0 && numbers.size() != 0){
             for(int i=0; i<operations.size(); i++){
-                screen += ("[" + operations.get(i) + "]");
-                if(i == 0) screen += (numbers.get(0) + "_");
-                screen += numbers.get(i+1);
+                screen.append("[").append(operations.get(i)).append("]");
+                if(i == 0) screen.append(numbers.get(0)).append("_");
+                screen.append(numbers.get(i + 1));
             }
         }
 

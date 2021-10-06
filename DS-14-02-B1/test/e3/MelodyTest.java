@@ -177,12 +177,12 @@ class MelodyTest {
     void testHasCodeNotEquals() {
         Random r = new Random(System.currentTimeMillis());
         int tests = 100;
-        int melodyLenght = 5;
+        int melodyLength = 5;
         int count = 0;
         for (int i = 0; i < tests; i++) {
             Melody m1 = new Melody();
             Melody m2 = new Melody();
-            for (int j = 0; j < melodyLenght; j++) {
+            for (int j = 0; j < melodyLength; j++) {
                 m1.addNote(
                         Notes.values()[r.nextInt(Notes.values().length)],
                         Accidentals.values()[r.nextInt(Accidentals.values().length)],
@@ -201,7 +201,7 @@ class MelodyTest {
 
     // test exceptions
     @Test
-    void testExcetions() {
+    void testExceptions() {
         Melody m = new Melody();
 
         assertThrows(IllegalArgumentException.class, () -> m.addNote(null, Accidentals.NATURAL, 1f));
