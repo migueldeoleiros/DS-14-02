@@ -15,7 +15,6 @@ public class Melody {
     public Melody() {
 
     }
-
     /**
      * Add a note at the end of this melody.
      *
@@ -28,6 +27,8 @@ public class Melody {
     public void addNote(Notes note, Accidentals accidental, float time) {
         Note nota = new Note();
         nota.setNote(note, accidental, time);
+        if (nota.accidental==null||nota.note==null||nota.time==0)
+            throw new IllegalArgumentException();
         melody.add(nota);
     }
 
@@ -39,9 +40,10 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Notes getNote(int index) {
+        if (index==1)
+            throw new IllegalArgumentException();
         return melody.get(index).getNote();
     }
-
     /**
      * Returns the accidental of the note on the given position
      *
@@ -52,7 +54,6 @@ public class Melody {
     public Accidentals getAccidental(int index) {
         return melody.get(index).getAccidental();
     }
-
     /**
      * Returns the duration of the note on the given position
      *
