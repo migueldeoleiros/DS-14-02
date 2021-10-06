@@ -2,6 +2,8 @@ package e4;
 
 public class Calculator {
 
+    enum operator {SUM,REST,MULT,DIV}
+
     /**
      * Public constructor of the calculator .
      */
@@ -34,7 +36,7 @@ public class Calculator {
 
     }
 
-    /**
+   /**
      * Execute the set of operations of the internal state of the calculator .
      * Once execution is finished , internal state (operands and operations)
      * is restored (EVEN if exception occurs ).
@@ -45,7 +47,9 @@ public class Calculator {
      *                             (division by zero)
      */
     public float executeOperations() {
+        float result=0;
 
+        return result;
     }
 
     /**
@@ -57,7 +61,9 @@ public class Calculator {
      */
     @Override
     public String toString() {
+        String screen="";
 
+        return screen;
     }
 
 }
