@@ -82,8 +82,6 @@ public class Calculator {
         numbers.add(values[0]);
         if(values.length == 2 ){
             numbers.add(values[1]);
-        }else if(values.length != 1){
-            throw new IllegalArgumentException("too many arguments");
         }
     }
 
