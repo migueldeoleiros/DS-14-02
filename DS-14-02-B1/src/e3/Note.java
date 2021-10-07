@@ -7,25 +7,41 @@ public class Note{
     public Melody.Accidentals accidental;
     public float time;
 
-    //Initializes note fields
+    /**
+     * Initializes note fields
+     */
     public void setNote(Melody.Notes note, Melody.Accidentals accidental, float time) {
         this.note = note;
         this.accidental = accidental;
         this.time = time;
     }
-    //Returns the note
+
+    /**
+     * @return the note (DO,RE,MI,FA,SOL,LA,SI)
+     */
     public Melody.Notes getNote() {
         return note;
     }
-    //Returns note´s accidental
+
+    /**
+     * @return the note accidental (SHARP,FLAT,NATURAL)
+     */
     public Melody.Accidentals getAccidental() {
         return accidental;
     }
-    //Returns note´s duration
+
+    /**
+     * @return the note's duration.
+     */
     public float getTime() {
         return time;
     }
-    //Transforms FLAT notes into their matching SHARP/NATURAL notes
+
+    /**
+     * Transforms FLAT notes into their matching SHARP/NATURAL notes.
+     *
+     * @param nota that is going to have the new transformed values.
+     */
     private void transform(Note nota){
         if (note== Melody.Notes.RE && accidental == Melody.Accidentals.FLAT) //DO# = REb
             nota.setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
@@ -47,7 +63,12 @@ public class Note{
             nota.setNote(Melody.Notes.DO, Melody.Accidentals.NATURAL,time);
         else nota.setNote(note,accidental,time);
     }
-    //Checks if two notes are equivalents
+
+    /**
+     * Checks if two notes are equivalent.
+     *
+     * @return true if the notes are equal or equivalent, false otherwise.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,7 +88,14 @@ public class Note{
 
        return false;
     }
-    //Returns an integer that is a HashCode representation of the note
+
+    /**
+     * Returns an integer that is a hash code representation of the note.
+     * Two notes n1 , n2 that are equals (n1.equals(n2) == true) must
+     * have the same hash code.
+     *
+     * @return hash code of this note.
+     */
     @Override
     public int hashCode() {
         int hash=0;
@@ -84,7 +112,13 @@ public class Note{
 
         return hash;
     }
-    //String representation of the note
+
+    /**
+     * The string representation of this note.
+     *
+     * @return The String representation of this note.
+     */
+    @Override
     public String toString(){
         String accidentalStr;
 
