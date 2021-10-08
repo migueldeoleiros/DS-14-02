@@ -33,7 +33,6 @@ public class Slopes {
     public static int downTheSlope(char[][] slopeMap, int right, int down) {
         int treeNum =0; //number of trees found along the way
         int row=0, col=0;
-        int n=0; //break if 1
         test(slopeMap, right, down);
         while(row < slopeMap.length) {
             if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
@@ -50,10 +49,9 @@ public class Slopes {
                 if(row < slopeMap.length-1){
                     row++;
                 }else{
-                    n=1;break;
+                    row++;break;
                 }
             }
-            if(n==1)break;
         }
         return treeNum;
     }
@@ -69,7 +67,6 @@ public class Slopes {
     public static int jumpTheSlope(char[][] slopeMap, int right, int down) {
         int treeNum =0; //number of trees found along the way
         int row=0, col=0;
-        int n=0; //break if 1
         test(slopeMap, right, down);
         while(row < slopeMap.length) {
             if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
@@ -85,10 +82,9 @@ public class Slopes {
                 if(row < slopeMap.length-1){
                     row++;
                 }else{
-                    n=1;break;
+                    row++;break;
                 }
             }
-            if(n==1)break;
         }
         return treeNum;
     }
