@@ -35,17 +35,13 @@ public class Calculator {
      * @throws IllegalArgumentException if the operator doesn't exist
      */
     private Operator toOperator(String str){
-        switch (str){
-            case "+":
-                return Operator.SUM;
-            case "-":
-                return Operator.RES;
-            case "*":
-                return Operator.MUL;
-            case "/":
-                return Operator.DIV;
-        }
-        throw new IllegalArgumentException();
+        return switch (str) {
+            case "+" -> Operator.SUM;
+            case "-" -> Operator.RES;
+            case "*" -> Operator.MUL;
+            case "/" -> Operator.DIV;
+            default -> throw new IllegalArgumentException();
+        };
     }
 
     /**
@@ -80,7 +76,7 @@ public class Calculator {
     public void addOperation(String operation, float... values) {
         operations.add(toOperator(operation));
         numbers.add(values[0]);
-        if(values.length == 2 ){
+        if(values.length == 2 && operations.size()==1){
             numbers.add(values[1]);
         }
     }

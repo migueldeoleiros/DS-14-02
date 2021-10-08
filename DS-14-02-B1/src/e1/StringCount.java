@@ -58,12 +58,9 @@ public class StringCount {
         if (text != null) {
             for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == c) count++;
-            }
-            for (int i = 0; i < text.length(); i++) {
                 if (text.charAt(i) == Character.toUpperCase(c)) count++;
             }
         }
-
         return count;
     }
 
@@ -85,20 +82,10 @@ public class StringCount {
             for (int i = 0; i < password.length(); i++) {
                 char c = password.charAt(i);
                 if (c >= '0' && c <= '9') countNum++;
+                else if (c >= 'a' && c <= 'z') countLow++;
+                else if (c >= 'A' && c <= 'Z') countUp++;
+                else if (c == '?' || c == '@' || c == '#' || c == '$' || c == '.' || c == ',') countSpe++;
             }
-            for (int i = 0; i < password.length(); i++) {
-                char c = password.charAt(i);
-                if (c >= 'a' && c <= 'z') countLow++;
-            }
-            for (int i = 0; i < password.length(); i++) {
-                char c = password.charAt(i);
-                if (c >= 'A' && c <= 'Z') countUp++;
-            }
-            for (int i = 0; i < password.length(); i++) {
-                char c = password.charAt(i);
-                if (c == '?' || c == '@' || c == '#' || c == '$' || c == '.' || c == ',') countSpe++;
-            }
-
             return (countSpe != 0 && countUp != 0 && countLow != 0 && countNum != 0);
         }
         return false;

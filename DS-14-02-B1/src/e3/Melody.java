@@ -27,7 +27,7 @@ public class Melody {
     public void addNote(Notes note, Accidentals accidental, float time) {
         Note nota = new Note();
         nota.setNote(note, accidental, time);
-        if (nota.accidental==null||nota.note==null||nota.time==0)
+        if (nota.accidental==null||nota.note==null||nota.time<=0)
             throw new IllegalArgumentException();
         melody.add(nota);
     }
@@ -40,7 +40,7 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Notes getNote(int index) {
-        if (index==1)
+        if (index<0||index>melody.size()-1)
             throw new IllegalArgumentException();
         return melody.get(index).getNote();
     }
@@ -52,6 +52,8 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public Accidentals getAccidental(int index) {
+        if (index<0||index>melody.size()-1)
+            throw new IllegalArgumentException();
         return melody.get(index).getAccidental();
     }
     /**
@@ -62,6 +64,8 @@ public class Melody {
      * @throws IllegalArgumentException if the index is not a valid position.
      */
     public float getTime(int index) {
+        if (index<0||index>melody.size()-1)
+            throw new IllegalArgumentException();
         return melody.get(index).getTime();
     }
 
@@ -119,7 +123,7 @@ public class Melody {
         for(Note i: melody){
             hash += i.hashCode();
         }
-        return hash;
+        return Float.hashCode(hash);
     }
 
     /**

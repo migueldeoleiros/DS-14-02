@@ -6,13 +6,20 @@ public class Slopes {
      * @throws IllegalArgumentException if the matrix is incorrect because:
      *  - right >= number of columns or right < 1
      *  - down >= number of rows of the matrix or down < 1
+     *  - It is not square. * - It has characters other than "." and "#"
      */
      private static void test(char[][] slopeMap, int right, int down){
-         if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1 )
+         if(right<1 || down<1 || right>slopeMap.length-1 || down>slopeMap.length-1)
              throw new IllegalArgumentException();
          for (char[] chars : slopeMap) {
              if (slopeMap.length != chars.length)
                  throw new IllegalArgumentException();
+         }
+         for (char[] chars : slopeMap) {
+             for (char aChar : chars) {
+                 if (aChar != '.' && aChar != '#')
+                     throw new IllegalArgumentException();
+             }
          }
      }
 
@@ -35,8 +42,6 @@ public class Slopes {
         int row=0, col=0;
         test(slopeMap, right, down);
         while(row < slopeMap.length) {
-            if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
-                throw new IllegalArgumentException();
             for(int x=0;x<right;x++){
                 if (slopeMap[row][col] == '#') treeNum++;
                 if(col < slopeMap[row].length-1){
@@ -69,8 +74,6 @@ public class Slopes {
         int row=0, col=0;
         test(slopeMap, right, down);
         while(row < slopeMap.length) {
-            if (slopeMap[row][col]!='.'&&slopeMap[row][col]!='#')
-                throw new IllegalArgumentException();
             if (slopeMap[row][col] == '#') treeNum++;
             for(int x=0;x<right;x++){
                 if(col < slopeMap[row].length-1){

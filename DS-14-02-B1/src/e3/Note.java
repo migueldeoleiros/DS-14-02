@@ -41,27 +41,28 @@ public class Note{
      * Transforms FLAT notes into their matching SHARP/NATURAL notes.
      *
      * @param nota that is going to have the new transformed values.
+     * @throws IllegalArgumentException if the note is null
      */
-    private void transform(Note nota){
-        if (note== Melody.Notes.RE && accidental == Melody.Accidentals.FLAT) //DO# = REb
-            nota.setNote(Melody.Notes.DO, Melody.Accidentals.SHARP,time);
-        else if (note== Melody.Notes.MI && accidental == Melody.Accidentals.FLAT) //RE# = MIb
-            nota.setNote(Melody.Notes.RE, Melody.Accidentals.SHARP,time);
-        else if (note== Melody.Notes.FA && accidental == Melody.Accidentals.FLAT) //MI = FAb
-            nota.setNote(Melody.Notes.MI, Melody.Accidentals.NATURAL,time);
-        else if (note== Melody.Notes.MI && accidental == Melody.Accidentals.SHARP) //MI# = FA
-            nota.setNote(Melody.Notes.FA, Melody.Accidentals.NATURAL,time);
-        else if (note== Melody.Notes.SOL && accidental == Melody.Accidentals.FLAT) //FA# = SOLb
-            nota.setNote(Melody.Notes.FA, Melody.Accidentals.SHARP,time);
-        else if (note== Melody.Notes.LA && accidental == Melody.Accidentals.FLAT) //SOL# = LAb
-            nota.setNote(Melody.Notes.SOL, Melody.Accidentals.SHARP,time);
-        else if (note== Melody.Notes.SI && accidental == Melody.Accidentals.FLAT) //LA# = SIb
-            nota.setNote(Melody.Notes.LA, Melody.Accidentals.SHARP,time);
-        else if (note== Melody.Notes.DO && accidental == Melody.Accidentals.FLAT) //Si = DOb
-            nota.setNote(Melody.Notes.SI, Melody.Accidentals.NATURAL,time);
-        else if (note== Melody.Notes.SI && accidental == Melody.Accidentals.SHARP) //SI# = DO
-            nota.setNote(Melody.Notes.DO, Melody.Accidentals.NATURAL,time);
-        else nota.setNote(note,accidental,time);
+    private void transform(Note nota) {
+        if (note == Melody.Notes.RE && accidental == Melody.Accidentals.FLAT) //DO# = REb
+            nota.setNote(Melody.Notes.DO, Melody.Accidentals.SHARP, time);
+        else if (note == Melody.Notes.MI && accidental == Melody.Accidentals.FLAT) //RE# = MIb
+            nota.setNote(Melody.Notes.RE, Melody.Accidentals.SHARP, time);
+        else if (note == Melody.Notes.FA && accidental == Melody.Accidentals.FLAT) //MI = FAb
+            nota.setNote(Melody.Notes.MI, Melody.Accidentals.NATURAL, time);
+        else if (note == Melody.Notes.MI && accidental == Melody.Accidentals.SHARP) //MI# = FA
+            nota.setNote(Melody.Notes.FA, Melody.Accidentals.NATURAL, time);
+        else if (note == Melody.Notes.SOL && accidental == Melody.Accidentals.FLAT) //FA# = SOLb
+            nota.setNote(Melody.Notes.FA, Melody.Accidentals.SHARP, time);
+        else if (note == Melody.Notes.LA && accidental == Melody.Accidentals.FLAT) //SOL# = LAb
+            nota.setNote(Melody.Notes.SOL, Melody.Accidentals.SHARP, time);
+        else if (note == Melody.Notes.SI && accidental == Melody.Accidentals.FLAT) //LA# = SIb
+            nota.setNote(Melody.Notes.LA, Melody.Accidentals.SHARP, time);
+        else if (note == Melody.Notes.DO && accidental == Melody.Accidentals.FLAT) //Si = DOb
+            nota.setNote(Melody.Notes.SI, Melody.Accidentals.NATURAL, time);
+        else if (note == Melody.Notes.SI && accidental == Melody.Accidentals.SHARP) //SI# = DO
+            nota.setNote(Melody.Notes.DO, Melody.Accidentals.NATURAL, time);
+        else nota.setNote(note, accidental, time);
     }
 
     /**
@@ -110,7 +111,7 @@ public class Note{
 
         hash += (note2.time*100);
 
-        return hash;
+        return Float.hashCode(hash);
     }
 
     /**

@@ -210,6 +210,8 @@ class MelodyTest {
 
         m.addNote(Notes.DO, Accidentals.NATURAL, 1f);
         assertThrows(IllegalArgumentException.class, () -> m.getNote(1));
+        assertThrows(IllegalArgumentException.class, () -> m.getAccidental(-1));
+        assertThrows(IllegalArgumentException.class, () -> m.getTime(69));
 
     }
 }
