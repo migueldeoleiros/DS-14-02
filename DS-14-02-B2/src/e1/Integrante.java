@@ -1,19 +1,20 @@
 package e1;
 
-public class Integrante {
+public abstract class Integrante {
     public String nombre;
     public String apellido;
     public int edad;
+    public int horrocrux;
     public float recompensa;
 
-    public void setIntegrante(String nombre, String apellido, int edad, float recompensa) {
+    public void set(String nombre, String apellido, int edad, int horrocrux) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
-        this.recompensa = recompensa;
+        this.horrocrux= horrocrux;
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
     public String getApellido() {
@@ -22,7 +23,6 @@ public class Integrante {
     public int getEdad() {
         return edad;
     }
-    public float getRecompensa() {
-        return recompensa;
-    }
+    public int getHorrocrux() { return horrocrux; }
+    public float getRecompensa(){return recompensa;}
 }
