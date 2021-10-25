@@ -9,6 +9,19 @@ public class Colegio {
 
     public Colegio(){}
 
+    public void addEstudiante(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
+        e1.Residentes.Estudiante residente = new e1.Residentes.Estudiante();
+        residente.set(nombre, apellido, edad, horrocrux, casa);
+//            throw new IllegalArgumentException();
+        residentes.add(residente);
+    }
+    public void addFantasma(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
+        e1.Residentes.Fantasma residente = new e1.Residentes.Fantasma();
+        residente.set(nombre, apellido, edad, horrocrux, casa);
+//            throw new IllegalArgumentException();
+        residentes.add(residente);
+    }
+
     public String imprimirRecompensas(){
         StringBuilder output = new StringBuilder();
         float total=0;
