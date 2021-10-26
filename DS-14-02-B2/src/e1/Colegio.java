@@ -1,5 +1,7 @@
 package e1;
 
+import e1.Personales.*;
+
 import java.util.ArrayList;
 
 public class Colegio {
@@ -20,6 +22,24 @@ public class Colegio {
         residente.set(nombre, apellido, edad, horrocrux, casa);
 //            throw new IllegalArgumentException();
         residentes.add(residente);
+    }
+    public void addConserje(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
+        e1.Personales.Conserje personal = new e1.Personales.Conserje();
+        personal.set(nombre, apellido, edad, horrocrux, nocturnidad);
+//            throw new IllegalArgumentException();
+        personales.add(personal);
+    }
+    public void addDocente(String nombre, String apellido, int edad, int horrocrux, Docente.Asignatura asignatura){
+        e1.Personales.Docente personal = new e1.Personales.Docente();
+        personal.set(nombre, apellido, edad, horrocrux, asignatura);
+//            throw new IllegalArgumentException();
+        personales.add(personal);
+    }
+    public void addGuardabosque(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
+        e1.Personales.Guardabosque personal = new e1.Personales.Guardabosque();
+        personal.set(nombre, apellido, edad, horrocrux, nocturnidad);
+//            throw new IllegalArgumentException();
+        personales.add(personal);
     }
 
     public String imprimirRecompensas(){

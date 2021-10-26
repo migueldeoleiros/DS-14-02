@@ -1,7 +1,7 @@
 package e1;
 
 public abstract class Residente extends Integrante{
-    enum Casa {Gryffindor, Hufflepuff, Ravenclaw, Slytherin}
+    public enum Casa {Gryffindor, Hufflepuff, Ravenclaw, Slytherin}
     public Casa casa;
 
     public Casa getCasa() {
