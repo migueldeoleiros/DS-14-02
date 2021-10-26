@@ -14,15 +14,5 @@ public abstract class Integrante {
         this.horrocrux= horrocrux;
     }
 
-    public String getNombre(){
-        return nombre;
-    }
-    public String getApellido() {
-        return apellido;
-    }
-    public int getEdad() {
-        return edad;
-    }
-    public int getHorrocrux() { return horrocrux; }
     public float getRecompensa(){return recompensa;}
 }

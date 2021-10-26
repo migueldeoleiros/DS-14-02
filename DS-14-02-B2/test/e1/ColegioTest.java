@@ -17,6 +17,9 @@ class ColegioTest {
         Howarts.addDocente("Minerva","McGonagall",70,1, Docente.Asignatura.Transformaciones);
         Howarts.addDocente("Severus","Snape",50,2, Docente.Asignatura.Defensa);
         Howarts.addConserje("Argus","Filch",65,0, true);
+        Howarts.addDocente("Leo","Messi",34,0, Docente.Asignatura.Historia);
+        Howarts.addDocente("Usain","Bolt",1200,0, Docente.Asignatura.Pociones);
+        Howarts.addDocente("Donald","Trump",72,10, Docente.Asignatura.Herbologia);
     }
     @Test
     void testRecompensa(){
@@ -27,7 +30,10 @@ class ColegioTest {
                 Minerva McGonagall(Docente de Transformaciones, 1 horrocruxes): 50.0 galeones
                 Severus Snape(Docente de Defensa, 2 horrocruxes): 75.0 galeones
                 Argus Filch(Conserje, 0 horrocruxes): 0.0 galeones
-                La recompensa total del Colegio Howarts es de 705.0 galeones""",
+                Leo Messi(Docente de Historia, 0 horrocruxes): 0.0 galeones
+                Usain Bolt(Docente de Pociones, 0 horrocruxes): 0.0 galeones
+                Donald Trump(Docente de Herbologia, 10 horrocruxes): 500.0 galeones
+                La recompensa total del Colegio Howarts es de 1205.0 galeones""",
                 Howarts.imprimirRecompensas());
     }
     @Test
@@ -37,7 +43,10 @@ class ColegioTest {
                 Minerva McGonagall(Docente de Transformaciones): 400 galeones
                 Severus Snape(Docente de Defensa): 500 galeones
                 Argus Filch(Conserje): 160 galeones
-                El gasto de Howarts en personal es de 1240 galeones""",
+                Leo Messi(Docente de Historia): 200 galeones
+                Usain Bolt(Docente de Pociones): 350 galeones
+                Donald Trump(Docente de Herbologia): 250 galeones
+                El gasto de Howarts en personal es de 2040 galeones""",
                 Howarts.imprimirSalarios());
     }
     @Test
