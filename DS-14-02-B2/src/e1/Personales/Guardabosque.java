@@ -2,10 +2,7 @@ package e1.Personales;
 
 public class Guardabosque extends e1.Personal {
     boolean nocturnidad;
-
-    public Guardabosque(){}
-
-    public void set(String nombre, String apellido, int edad,int horrocrux, boolean nocturnidad) {
+    public Guardabosque(String nombre, String apellido, int edad,int horrocrux, boolean nocturnidad) {
         super.set(nombre, apellido, edad, horrocrux);
         this.nocturnidad=nocturnidad;
         salario=170;
