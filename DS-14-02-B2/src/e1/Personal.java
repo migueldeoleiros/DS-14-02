@@ -1,7 +1,7 @@
 package e1;
 
 public abstract class Personal extends Integrante {
-    public float salario;
+    public int salario;
 
     public float getSalario() {
         return salario;

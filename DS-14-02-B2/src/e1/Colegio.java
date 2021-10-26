@@ -56,21 +56,21 @@ public class Colegio {
         output.append("La recompensa total del Colegio Howarts es de ")
                 .append(total).append(" galeones");
 
-        System.out.println(output);
+        //System.out.println(output);
         return output.toString();
     }
 
     public String imprimirSalarios(){
         StringBuilder output = new StringBuilder();
-        float total=0;
+        int total=0;
         for(Personal i: personales){
             output.append(i.toStringSalario()).append("\n");
             total += i.getSalario();
         }
-        output.append("El gasto de Howarts en persona es de ")
+        output.append("El gasto de Howarts en personal es de ")
                 .append(total).append(" galeones");
 
-        System.out.println(output);
+        //System.out.println(output);
         return output.toString();
 
     }

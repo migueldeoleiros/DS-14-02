@@ -21,7 +21,7 @@ public class Guardabosque extends e1.Personal {
     @Override
     public String toStringSalario() {
         return  nombre + " " + apellido +
-                "(Guardabosques):" +
+                "(Guardabosques): " +
                 salario + " galeones";
     }
 }

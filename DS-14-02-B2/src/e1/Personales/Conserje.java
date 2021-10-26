@@ -22,7 +22,7 @@ public class Conserje extends e1.Personal {
     @Override
     public String toStringSalario() {
         return  nombre + " " + apellido +
-                "(Conserje):" +
+                "(Conserje): " +
                 salario + " galeones";
     }
 }

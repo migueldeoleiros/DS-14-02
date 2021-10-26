@@ -31,8 +31,8 @@ public class Docente extends e1.Personal {
     }
     @Override
     public String toStringSalario() {
-        return  nombre + " " + apellido +
-                "Docente de " + asignatura + "):" +
+        return  nombre + " " + apellido + "(" +
+                "Docente de " + asignatura + "): " +
                 salario + " galeones";
     }
 }

@@ -15,11 +15,10 @@ class ColegioTest {
         Howarts.addGuardabosque("Rubeus","Hagrid",45,2, true);
         Howarts.addDocente("Minerva","McGonagall",70,1, Docente.Asignatura.Transformaciones);
         Howarts.addDocente("Severus","Snape",50,2, Docente.Asignatura.Defensa);
-        Howarts.addConserje("Argus","Filch",65,0, false);
+        Howarts.addConserje("Argus","Filch",65,0, true);
     }
     @Test
-    void Recompensa(){
-
+    void testRecompensa(){
         assertEquals("""
                         Hermione Granger(Estudiante de Gryffindor, 3 horrocruxes): 270.0 galeones
                         Baron Sanguinario(Fantasma de Slytherin, 1 horrocruxes): 160.0 galeones
@@ -29,5 +28,15 @@ class ColegioTest {
                         Argus Filch(Conserje, 0 horrocruxes): 0.0 galeones
                         La recompensa total del Colegio Howarts es de 705.0 galeones""",
                 Howarts.imprimirRecompensas());
+    }
+    @Test
+    void testSalario(){
+        assertEquals("""
+                Rubeus Hagrid(Guardabosques): 180 galeones
+                Minerva McGonagall(Docente de Transformaciones): 400 galeones
+                Severus Snape(Docente de Defensa): 500 galeones
+                Argus Filch(Conserje): 160 galeones
+                El gasto de Howarts en personal es de 1240 galeones""",
+                Howarts.imprimirSalarios());
     }
 }
