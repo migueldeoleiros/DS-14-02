@@ -12,7 +12,7 @@ public class Colegio {
     public Colegio(){}
 
     private void exceptionTest(int edad, int horrocrux){
-        if(edad<=0 || horrocrux <=0)throw new IllegalArgumentException();
+        if(edad<=0 || horrocrux<0)throw new IllegalArgumentException();
     }
     public void addEstudiante(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
         e1.Residentes.Estudiante residente = new e1.Residentes.Estudiante();

@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ColegioTest {
     private Colegio Howarts;
+
     @BeforeEach
     void setUp(){
         Howarts = new Colegio();
@@ -38,5 +39,19 @@ class ColegioTest {
                 Argus Filch(Conserje): 160 galeones
                 El gasto de Howarts en personal es de 1240 galeones""",
                 Howarts.imprimirSalarios());
+    }
+    @Test
+    void testExceptions(){
+        Howarts = new Colegio();
+        assertThrows(IllegalArgumentException.class,() ->
+        Howarts.addEstudiante("Hermione", "Granger", -12, -3, Residente.Casa.Gryffindor));
+        assertThrows(IllegalArgumentException.class,() ->
+        Howarts.addFantasma("Baron", "Sanguinario", 0, -500, Residente.Casa.Slytherin));
+        assertThrows(IllegalArgumentException.class,() ->
+        Howarts.addDocente("Severus","Snape",-9797,-2, Docente.Asignatura.Defensa));
+        assertThrows(IllegalArgumentException.class,() ->
+        Howarts.addConserje("Argus","Filch",0,-9776, true));
+        assertThrows(IllegalArgumentException.class,() ->
+        Howarts.addGuardabosque("Rubeus","Hagrid",-987,0, true));
     }
 }
