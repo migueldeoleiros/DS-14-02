@@ -44,14 +44,14 @@ class ColegioTest {
     void testExceptions(){
         Howarts = new Colegio();
         assertThrows(IllegalArgumentException.class,() ->
-        Howarts.addEstudiante("Hermione", "Granger", -12, -3, Residente.Casa.Gryffindor));
+            Howarts.addEstudiante("Hermione", "Granger", -12, -3, null));
         assertThrows(IllegalArgumentException.class,() ->
-        Howarts.addFantasma("Baron", "Sanguinario", 0, -500, Residente.Casa.Slytherin));
+            Howarts.addFantasma("Baron", "Sanguinario", 0, -500, Residente.Casa.Slytherin));
         assertThrows(IllegalArgumentException.class,() ->
-        Howarts.addDocente("Severus","Snape",-9797,-2, Docente.Asignatura.Defensa));
+            Howarts.addDocente("Severus","Snape",-9797,-2,null));
         assertThrows(IllegalArgumentException.class,() ->
-        Howarts.addConserje("Argus","Filch",0,-9776, true));
+            Howarts.addConserje("Argus",null,0,-9776, true));
         assertThrows(IllegalArgumentException.class,() ->
-        Howarts.addGuardabosque("Rubeus","Hagrid",-987,0, true));
+            Howarts.addGuardabosque(null,"Hagrid",-987,0, true));
     }
 }

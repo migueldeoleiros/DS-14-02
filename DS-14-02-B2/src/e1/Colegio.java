@@ -11,36 +11,40 @@ public class Colegio {
 
     public Colegio(){}
 
-    private void exceptionTest(int edad, int horrocrux){
+    private void exceptionTest(int edad, int horrocrux, String nombre, String apellido){
+        if(nombre==null||apellido==null)throw new IllegalArgumentException();
         if(edad<=0 || horrocrux<0)throw new IllegalArgumentException();
     }
     public void addEstudiante(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
         e1.Residentes.Estudiante residente = new e1.Residentes.Estudiante();
-        exceptionTest(edad,horrocrux);
+        exceptionTest(edad,horrocrux,nombre,apellido);
+        if(casa==null) throw new IllegalArgumentException();
         residente.set(nombre, apellido, edad, horrocrux, casa);
         residentes.add(residente);
     }
     public void addFantasma(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
         e1.Residentes.Fantasma residente = new e1.Residentes.Fantasma();
-        exceptionTest(edad,horrocrux);
+        exceptionTest(edad,horrocrux,nombre,apellido);
+        if(casa==null) throw new IllegalArgumentException();
         residente.set(nombre, apellido, edad, horrocrux, casa);
         residentes.add(residente);
     }
     public void addConserje(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
         e1.Personales.Conserje personal = new e1.Personales.Conserje();
-        exceptionTest(edad,horrocrux);
+        exceptionTest(edad,horrocrux,nombre,apellido);
         personal.set(nombre, apellido, edad, horrocrux, nocturnidad);
         personales.add(personal);
     }
     public void addDocente(String nombre, String apellido, int edad, int horrocrux, Docente.Asignatura asignatura){
         e1.Personales.Docente personal = new e1.Personales.Docente();
-        exceptionTest(edad,horrocrux);
+        exceptionTest(edad,horrocrux,nombre,apellido);
+        if(asignatura==null) throw new IllegalArgumentException();
         personal.set(nombre, apellido, edad, horrocrux, asignatura);
         personales.add(personal);
     }
     public void addGuardabosque(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
         e1.Personales.Guardabosque personal = new e1.Personales.Guardabosque();
-        exceptionTest(edad,horrocrux);
+        exceptionTest(edad,horrocrux,nombre,apellido);
         personal.set(nombre, apellido, edad, horrocrux, nocturnidad);
         personales.add(personal);
     }
