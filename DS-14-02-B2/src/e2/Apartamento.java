@@ -3,13 +3,13 @@ package e2;
 import java.util.Objects;
 
 public class Apartamento {
-    int precioBase;
-    int precioGaraje;
-    int metros;
-    int postal;
-    int aseos;
-    int habitaciones;
-    int piso;
+    Integer precioBase;
+    Integer precioGaraje;
+    Integer metros;
+    Integer postal;
+    Integer aseos;
+    Integer habitaciones;
+    Integer piso;
 
     public Apartamento(int precioBase, int precioGaraje, int metros, int postal, int aseos, int habitaciones, int piso) {
         this.precioBase = precioBase;
