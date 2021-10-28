@@ -6,7 +6,6 @@ public class Anuncio implements Comparable<Anuncio>{
     Integer referencia;
     Apartamento apartamento;
 
-    public Anuncio(){}
     public Anuncio(Integer referencia, Integer precioBase, Integer precioGaraje, Integer metros, Integer postal, Integer aseos, Integer habitaciones, Integer piso) {
         this.referencia = referencia;
         this.apartamento = new Apartamento(precioBase,precioGaraje,metros,postal,aseos,habitaciones,piso);
@@ -28,13 +27,26 @@ public class Anuncio implements Comparable<Anuncio>{
         return Objects.hash(apartamento);
     }
 }
-class precioBaseComparator implements Comparator<Anuncio>{
+class PrecioBaseComparator implements Comparator<Anuncio>{
     public int compare(Anuncio obj1, Anuncio obj2){
         return obj1.apartamento.precioBase.compareTo(obj2.apartamento.precioBase);
     }
 }
-class precioGarajeComparator implements Comparator<Anuncio>{
+class PrecioGarajeComparator implements Comparator<Anuncio>{
     public int compare(Anuncio obj1, Anuncio obj2){
-        return obj1.apartamento.precioGaraje.compareTo(obj2.apartamento.precioGaraje);
+        Integer p1, p2;
+        p1 = (obj1.apartamento.precioGaraje + obj1.apartamento.precioBase);
+        p2 = (obj2.apartamento.precioGaraje + obj2.apartamento.precioBase);
+        return p1.compareTo(p2);
+    }
+}
+class AseosComparator implements Comparator<Anuncio>{
+    public int compare(Anuncio obj1, Anuncio obj2){
+        return obj1.apartamento.aseos.compareTo(obj2.apartamento.aseos);
+    }
+}
+class HabitacionComparator implements Comparator<Anuncio>{
+    public int compare(Anuncio obj1, Anuncio obj2){
+        return obj1.apartamento.habitaciones.compareTo(obj2.apartamento.habitaciones);
     }
 }

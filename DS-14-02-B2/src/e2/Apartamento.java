@@ -21,33 +21,11 @@ public class Apartamento {
         this.piso = piso;
     }
 
-    public int getPrecioBase() {
-        return precioBase;
-    }
-    public int getPrecioGaraje() {
-        return precioGaraje;
-    }
-    public int getMetros() {
-        return metros;
-    }
-    public int getPostal() {
-        return postal;
-    }
-    public int getAseos() {
-        return aseos;
-    }
-    public int getHabitaciones() {
-        return habitaciones;
-    }
-    public int getPiso() {
-        return piso;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Apartamento that)) return false;
-        return precioBase == that.precioBase && precioGaraje == that.precioGaraje && metros == that.metros && postal == that.postal && aseos == that.aseos && habitaciones == that.habitaciones && piso == that.piso;
+        return Objects.equals(precioBase, that.precioBase) && Objects.equals(precioGaraje, that.precioGaraje) && Objects.equals(metros, that.metros) && Objects.equals(postal, that.postal) && Objects.equals(aseos, that.aseos) && Objects.equals(habitaciones, that.habitaciones) && Objects.equals(piso, that.piso);
     }
 
     @Override
