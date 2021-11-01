@@ -12,7 +12,7 @@ class GestorTest {
     Anuncio anuncio1, anuncio2, anuncio3, anuncio4;
     ArrayList<Anuncio> anuncios= new ArrayList<>();
     ArrayList<Anuncio> anunciosSortedBase= new ArrayList<>();
-    ArrayList<Anuncio> anunciosSortedGaraje= new ArrayList<>();
+    ArrayList<Anuncio> anunciosSortedTotal= new ArrayList<>();
     ArrayList<Anuncio> anunciosSortedAseos= new ArrayList<>();
     ArrayList<Anuncio> anunciosSortedHabitaciones= new ArrayList<>();
 
@@ -27,39 +27,51 @@ class GestorTest {
         gestor.addAnuncio(110000,2000,110,15123,3,2,8);
         gestor.addAnuncio(300000,10000,200,13674,2,4,1);
         gestor.addAnuncio(75000,1000,75,32600,1,1,7);
+    }
 
+    @Test
+    void sortTest(){
         anuncios.add(anuncio1);
         anuncios.add(anuncio2);
         anuncios.add(anuncio3);
         anuncios.add(anuncio4);
 
+        assertEquals(anuncios,gestor.sort());
+    }
+    @Test
+    void sortPrecioBaseTest(){
         anunciosSortedBase.add(anuncio4);
         anunciosSortedBase.add(anuncio1);
         anunciosSortedBase.add(anuncio2);
         anunciosSortedBase.add(anuncio3);
 
-        anunciosSortedGaraje.add(anuncio4);
-        anunciosSortedGaraje.add(anuncio2);
-        anunciosSortedGaraje.add(anuncio1);
-        anunciosSortedGaraje.add(anuncio3);
+        assertEquals(anunciosSortedBase,gestor.sortPrecioBase());
+    }
+    @Test
+    void sortPrecioTotalTest(){
+        anunciosSortedTotal.add(anuncio4);
+        anunciosSortedTotal.add(anuncio2);
+        anunciosSortedTotal.add(anuncio1);
+        anunciosSortedTotal.add(anuncio3);
 
+        assertEquals(anunciosSortedTotal,gestor.sortPrecioTotal());
+    }
+    @Test
+    void sortAseosTest(){
         anunciosSortedAseos.add(anuncio4);
         anunciosSortedAseos.add(anuncio1);
         anunciosSortedAseos.add(anuncio3);
         anunciosSortedAseos.add(anuncio2);
 
+        assertEquals(anunciosSortedAseos,gestor.sortAseos());
+    }
+    @Test
+    void sortHabitacionesTest(){
         anunciosSortedHabitaciones.add(anuncio4);
         anunciosSortedHabitaciones.add(anuncio2);
         anunciosSortedHabitaciones.add(anuncio1);
         anunciosSortedHabitaciones.add(anuncio3);
-    }
 
-    @Test
-    void sortTest(){
-        assertEquals(anuncios,gestor.sort());
-        assertEquals(anunciosSortedBase,gestor.sortPrecioBase());
-        assertEquals(anunciosSortedGaraje,gestor.sortPrecioGaraje());
-        assertEquals(anunciosSortedAseos,gestor.sortAseos());
         assertEquals(anunciosSortedHabitaciones,gestor.sortHabitaciones());
     }
 

@@ -27,12 +27,15 @@ public class Anuncio implements Comparable<Anuncio>{
         return Objects.hash(apartamento);
     }
 }
+
+//Comparators
+
 class PrecioBaseComparator implements Comparator<Anuncio>{
     public int compare(Anuncio obj1, Anuncio obj2){
         return obj1.apartamento.precioBase.compareTo(obj2.apartamento.precioBase);
     }
 }
-class PrecioGarajeComparator implements Comparator<Anuncio>{
+class PrecioTotalComparator implements Comparator<Anuncio>{
     public int compare(Anuncio obj1, Anuncio obj2){
         Integer p1, p2;
         p1 = (obj1.apartamento.precioGaraje + obj1.apartamento.precioBase);

@@ -20,8 +20,8 @@ public class Gestor {
         anuncios.sort(new PrecioBaseComparator());
         return anuncios;
     }
-    public ArrayList<Anuncio> sortPrecioGaraje() {
-        anuncios.sort(new PrecioGarajeComparator());
+    public ArrayList<Anuncio> sortPrecioTotal() {
+        anuncios.sort(new PrecioTotalComparator());
         return anuncios;
     }
     public ArrayList<Anuncio> sortAseos() {
