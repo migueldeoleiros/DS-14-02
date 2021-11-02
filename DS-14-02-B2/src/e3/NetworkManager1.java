@@ -3,8 +3,9 @@ package e3;
 import javax.naming.NameNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Network1 implements NetworkManager {
+public class NetworkManager1 implements NetworkManager {
     List<List<TopicOfInterest>> matriz= new ArrayList<>();
     List<String> userList= new ArrayList<>();
 
@@ -26,16 +27,14 @@ public class Network1 implements NetworkManager {
     @Override
     public void addInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
         int userNum=userList.indexOf(user);
-        if (userNum==-1)
-            throw new NameNotFoundException();
+        if (userNum==-1) throw new NameNotFoundException();
         matriz.get(userNum).add(topicOfInterest);
-        }
+    }
 
     @Override
     public void removeInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
         int userNum = userList.indexOf(user);
-        if (userNum == -1)
-            throw new NameNotFoundException();
+        if (userNum == -1) throw new NameNotFoundException();
         List<TopicOfInterest> listUser = matriz.get(userNum);
         listUser.remove(topicOfInterest);
     }
@@ -47,13 +46,17 @@ public class Network1 implements NetworkManager {
 
     @Override
     public List<TopicOfInterest> getInterests() {
-        return null;
+        List<TopicOfInterest> listTopics = new ArrayList<>();
+        for(List<TopicOfInterest> i : matriz){
+            listTopics.addAll(i);
+        }
+
+        return listTopics.stream().distinct().collect(Collectors.toList());
     }
 
     @Override
     public List<TopicOfInterest> getInterestsUser(String user) {
-        List<TopicOfInterest> listTopics = new ArrayList<>();
         int userNum= userList.indexOf(user);
-        return listTopics;
+        return matriz.get(userNum);
     }
 }
