@@ -3,11 +3,12 @@ package e1;
 import e1.Personales.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Colegio {
 
-    ArrayList<Personal> personales = new ArrayList<>();
-    ArrayList<Residente> residentes = new ArrayList<>();
+    List<Personal> personales = new ArrayList<>();
+    List<Residente> residentes = new ArrayList<>();
 
     public Colegio(){}
 

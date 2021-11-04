@@ -2,9 +2,10 @@ package e2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Gestor {
-    ArrayList<Anuncio> anuncios= new ArrayList<>();
+    List<Anuncio> anuncios= new ArrayList<>();
     private int count=0;
 
     public void addAnuncio(int precioBase, int precioGaraje, int metros, int postal, int aseos, int habitaciones, int piso) {
@@ -12,23 +13,23 @@ public class Gestor {
         Anuncio anuncio = new Anuncio(referencia,precioBase,precioGaraje,metros,postal,aseos,habitaciones,piso);
         anuncios.add(anuncio);
     }
-    public ArrayList<Anuncio> sort(){
+    public List<Anuncio> sort(){
         Collections.sort(anuncios);
         return anuncios;
     }
-    public ArrayList<Anuncio> sortPrecioBase(){
+    public List<Anuncio> sortPrecioBase(){
         anuncios.sort(new PrecioBaseComparator());
         return anuncios;
     }
-    public ArrayList<Anuncio> sortPrecioTotal() {
+    public List<Anuncio> sortPrecioTotal() {
         anuncios.sort(new PrecioTotalComparator());
         return anuncios;
     }
-    public ArrayList<Anuncio> sortAseos() {
+    public List<Anuncio> sortAseos() {
         anuncios.sort(new AseosComparator());
         return anuncios;
     }
-    public ArrayList<Anuncio> sortHabitaciones() {
+    public List<Anuncio> sortHabitaciones() {
         anuncios.sort(new HabitacionComparator());
         return anuncios;
     }
