@@ -16,25 +16,25 @@ public class NetworkManager1 implements NetworkManager {
     }
 
     @Override
-    public void removeUser(String user) throws NameNotFoundException {
+    public void removeUser(String user){
         int userNum=userList.indexOf(user);
         if (userNum==-1)
-            throw new NameNotFoundException();
+            throw new IllegalArgumentException();
         userList.remove(userNum);
         matriz.remove(userNum);
     }
 
     @Override
-    public void addInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
+    public void addInterest(String user, TopicOfInterest topicOfInterest){
         int userNum=userList.indexOf(user);
-        if (userNum==-1) throw new NameNotFoundException();
+        if (userNum==-1) throw new IllegalArgumentException();
         matriz.get(userNum).add(topicOfInterest);
     }
 
     @Override
-    public void removeInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
+    public void removeInterest(String user, TopicOfInterest topicOfInterest){
         int userNum = userList.indexOf(user);
-        if (userNum == -1) throw new NameNotFoundException();
+        if (userNum == -1) throw new IllegalArgumentException();
         List<TopicOfInterest> listUser = matriz.get(userNum);
         listUser.remove(topicOfInterest);
     }

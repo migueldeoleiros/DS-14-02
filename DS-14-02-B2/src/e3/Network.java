@@ -13,13 +13,13 @@ public class Network {
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest){
         nm.addUser(user, topicsOfInterest);
     }
-    public void removeUser(String user) throws NameNotFoundException{
+    public void removeUser(String user){
         nm.removeUser(user);
     }
-    public void addInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
+    public void addInterest(String user, TopicOfInterest topicOfInterest){
         nm.addInterest(user, topicOfInterest);
     }
-    public void removeInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException {
+    public void removeInterest(String user, TopicOfInterest topicOfInterest){
         nm.removeInterest(user, topicOfInterest);
     }
     public List<String> getUsers() {

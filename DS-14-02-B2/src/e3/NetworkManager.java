@@ -9,13 +9,13 @@ public interface NetworkManager {
     void addUser(String user, List<TopicOfInterest> topicsOfInterest);
 
     //elimina un usuario de la red
-    void removeUser(String user) throws NameNotFoundException;
+    void removeUser(String user);
 
     //añade un tema de interes a un usuario
-    void addInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException;
+    void addInterest(String user, TopicOfInterest topicOfInterest);
 
     //elimina un tema de interes a un usuario
-    void removeInterest(String user, TopicOfInterest topicOfInterest) throws NameNotFoundException;
+    void removeInterest(String user, TopicOfInterest topicOfInterest);
 
     //devuelve una lista con todos los usuarios registrados
     List <String> getUsers();
