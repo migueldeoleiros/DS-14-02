@@ -10,8 +10,9 @@ public class NetworkManager1 implements NetworkManager {
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {
+        ArrayList<TopicOfInterest> arrayList = new ArrayList<>(topicsOfInterest);
         userList.add(user);
-        matriz.add(topicsOfInterest);
+        matriz.add(arrayList);
     }
 
     @Override

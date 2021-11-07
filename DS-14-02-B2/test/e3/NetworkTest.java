@@ -23,17 +23,18 @@ class NetworkTest {
         assertEquals(userList, network.getUsers());
     }
 
-    void addRemoveInterestTest(Network network, TopicOfInterest[] interests, TopicOfInterest[] interests2){
+    void addRemoveInterestTest(Network network, TopicOfInterest[] interests){
         assertEquals(Arrays.asList(interests), network.getInterestsUser("Paco"));
 
         network.addInterest("Paco", languages);
         network.removeInterest("Paco", sports);
 
+        TopicOfInterest[] interests2 = {politics, languages};
         assertEquals(Arrays.asList(interests2), network.getInterestsUser("Paco"));
     }
 
     void getInterestsTest(Network network){
-        TopicOfInterest[] interests = {sports,politics,science,tech,languages};
+        TopicOfInterest[] interests = {politics,languages,science,tech,sports};
         assertEquals(Arrays.asList(interests), network.getInterests());
     }
 
@@ -43,7 +44,7 @@ class NetworkTest {
 
     void toStringTest(Network network){
         assertEquals("""
-                        Paco: sports politics\s
+                        Paco: politics languages\s
                         Alberto: science technology\s
                         Laura: languages politics\s
                         Roberto: sports languages politics science technology\s
@@ -67,7 +68,7 @@ class NetworkTest {
         network.addUser("Roberto", Arrays.asList(interests3));
 
         addRemoveUserTest(network);
-        addRemoveInterestTest(network, interests, interests2);
+        addRemoveInterestTest(network, interests);
         getInterestsTest(network);
         compareTest(network, interests1);
         toStringTest(network);
@@ -83,10 +84,10 @@ class NetworkTest {
 
     @Test
     void testNetwork2(){
-        //NetworkManager nm2 = new NetworkManager2();
-        //Network network = new Network(nm2);
+        NetworkManager nm2 = new NetworkManager2();
+        Network network = new Network(nm2);
 
-        //testNetwork(network);
+        testNetwork(network);
     }
 
 }
