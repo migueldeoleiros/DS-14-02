@@ -1,6 +1,5 @@
 package e3;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -15,12 +14,12 @@ class NetworkTest {
     TopicOfInterest languages = new TopicOfInterest("languages");
 
     void addRemoveUserTest(Network network){
-        List<String> userList = List.of(new String[]{"Paco", "Alberto", "Laura", "Roberto"});
+        List<String> userList = List.of(new String[]{"Paco", "Alberto", "AlbertoJunior", "Laura", "Roberto"});
         assertEquals(userList, network.getUsers());
 
-        network.removeUser("Alberto");
+        network.removeUser("AlbertoJunior");
 
-        userList = List.of(new String[]{"Paco", "Laura", "Roberto"});
+        userList = List.of(new String[]{"Paco", "Alberto", "Laura", "Roberto"});
         assertEquals(userList, network.getUsers());
     }
 
@@ -33,16 +32,23 @@ class NetworkTest {
         assertEquals(Arrays.asList(interests2), network.getInterestsUser("Paco"));
     }
 
-    void getInterestsTest(Network network, TopicOfInterest[] interests3){
-        assertEquals(Arrays.asList(interests3), network.getInterests());
+    void getInterestsTest(Network network){
+        TopicOfInterest[] interests = {sports,politics,science,tech,languages};
+        assertEquals(Arrays.asList(interests), network.getInterests());
     }
 
     void compareTest(Network network, TopicOfInterest[] interests1){
-        assertEquals(Arrays.asList(interests1), network.compareUsers("Alberto", "Roberto"));
+        assertEquals(Arrays.asList(interests1), network.compareUsers("Roberto", "Alberto"));
     }
 
     void toStringTest(Network network){
-        assertEquals("", network.toString());
+        assertEquals("""
+                        Paco: sports politics\s
+                        Alberto: science technology\s
+                        Laura: languages politics\s
+                        Roberto: sports languages politics science technology\s
+                        """
+        , network.toString());
     }
 
     void testNetwork(Network network){
@@ -52,6 +58,8 @@ class NetworkTest {
         TopicOfInterest[] interests1 = {science,tech};
         network.addUser("Alberto", Arrays.asList(interests1));
 
+        network.addUser("AlbertoJunior", Arrays.asList(interests1));
+
         TopicOfInterest[] interests2 = {languages,politics};
         network.addUser("Laura", Arrays.asList(interests2));
 
@@ -60,7 +68,7 @@ class NetworkTest {
 
         addRemoveUserTest(network);
         addRemoveInterestTest(network, interests, interests2);
-        getInterestsTest(network, interests3);
+        getInterestsTest(network);
         compareTest(network, interests1);
         toStringTest(network);
     }

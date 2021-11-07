@@ -1,6 +1,5 @@
 package e3;
 
-import javax.naming.NameNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +27,8 @@ public class NetworkManager1 implements NetworkManager {
     public void addInterest(String user, TopicOfInterest topicOfInterest){
         int userNum=userList.indexOf(user);
         if (userNum==-1) throw new IllegalArgumentException();
-        matriz.get(userNum).add(topicOfInterest);
+        List<TopicOfInterest> listInterests= matriz.get(userNum);
+        listInterests.add(topicOfInterest);
     }
 
     @Override
@@ -57,6 +57,7 @@ public class NetworkManager1 implements NetworkManager {
     @Override
     public List<TopicOfInterest> getInterestsUser(String user) {
         int userNum= userList.indexOf(user);
+        if(userNum == -1) throw new IllegalArgumentException();
         return matriz.get(userNum);
     }
 }
