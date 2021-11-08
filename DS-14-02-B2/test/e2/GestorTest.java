@@ -1,9 +1,11 @@
 package e2;
 
+import e2.comparators.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,7 +38,7 @@ class GestorTest {
         anuncios.add(anuncio3);
         anuncios.add(anuncio4);
 
-        assertEquals(anuncios,gestor.sort());
+        assertEquals(anuncios,gestor.sort(null));
     }
     @Test
     void sortPrecioBaseTest(){
@@ -45,7 +47,8 @@ class GestorTest {
         anunciosSortedBase.add(anuncio2);
         anunciosSortedBase.add(anuncio3);
 
-        assertEquals(anunciosSortedBase,gestor.sortPrecioBase());
+        Comparator<Anuncio> comparator = new PrecioBaseComparator();
+        assertEquals(anunciosSortedBase,gestor.sort(comparator));
     }
     @Test
     void sortPrecioTotalTest(){
@@ -54,7 +57,8 @@ class GestorTest {
         anunciosSortedTotal.add(anuncio1);
         anunciosSortedTotal.add(anuncio3);
 
-        assertEquals(anunciosSortedTotal,gestor.sortPrecioTotal());
+        Comparator<Anuncio> comparator = new PrecioTotalComparator();
+        assertEquals(anunciosSortedTotal,gestor.sort(comparator));
     }
     @Test
     void sortAseosTest(){
@@ -63,7 +67,8 @@ class GestorTest {
         anunciosSortedAseos.add(anuncio3);
         anunciosSortedAseos.add(anuncio2);
 
-        assertEquals(anunciosSortedAseos,gestor.sortAseos());
+        Comparator<Anuncio> comparator = new AseosComparator();
+        assertEquals(anunciosSortedAseos,gestor.sort(comparator));
     }
     @Test
     void sortHabitacionesTest(){
@@ -72,7 +77,18 @@ class GestorTest {
         anunciosSortedHabitaciones.add(anuncio1);
         anunciosSortedHabitaciones.add(anuncio3);
 
-        assertEquals(anunciosSortedHabitaciones,gestor.sortHabitaciones());
+        Comparator<Anuncio> comparator = new HabitacionesComparator();
+        assertEquals(anunciosSortedHabitaciones,gestor.sort(comparator));
+    }
+    @Test
+    void sortMetrosTest(){
+        anunciosSortedHabitaciones.add(anuncio4);
+        anunciosSortedHabitaciones.add(anuncio1);
+        anunciosSortedHabitaciones.add(anuncio2);
+        anunciosSortedHabitaciones.add(anuncio3);
+
+        Comparator<Anuncio> comparator = new MetrosComparator();
+        assertEquals(anunciosSortedHabitaciones,gestor.sort(comparator));
     }
 
 }

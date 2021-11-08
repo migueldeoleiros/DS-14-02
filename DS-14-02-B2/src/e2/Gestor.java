@@ -1,7 +1,7 @@
 package e2;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Gestor {
@@ -13,24 +13,8 @@ public class Gestor {
         Anuncio anuncio = new Anuncio(referencia,precioBase,precioGaraje,metros,postal,aseos,habitaciones,piso);
         anuncios.add(anuncio);
     }
-    public List<Anuncio> sort(){
-        Collections.sort(anuncios);
-        return anuncios;
-    }
-    public List<Anuncio> sortPrecioBase(){
-        anuncios.sort(new PrecioBaseComparator());
-        return anuncios;
-    }
-    public List<Anuncio> sortPrecioTotal() {
-        anuncios.sort(new PrecioTotalComparator());
-        return anuncios;
-    }
-    public List<Anuncio> sortAseos() {
-        anuncios.sort(new AseosComparator());
-        return anuncios;
-    }
-    public List<Anuncio> sortHabitaciones() {
-        anuncios.sort(new HabitacionComparator());
+    public List<Anuncio> sort(Comparator<Anuncio> comparator){
+        anuncios.sort(comparator);
         return anuncios;
     }
 }
