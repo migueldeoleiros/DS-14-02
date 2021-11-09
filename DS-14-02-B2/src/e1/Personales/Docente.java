@@ -1,7 +1,5 @@
 package e1.Personales;
 
-import e1.Residente;
-
 public class Docente extends e1.Personal {
     public enum Asignatura {Defensa,Transformaciones,Pociones,Herbologia,Historia}
     Asignatura asignatura;

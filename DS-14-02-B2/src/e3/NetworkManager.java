@@ -1,9 +1,8 @@
 package e3;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public interface NetworkManager {
+public interface NetworkManager {       //Creamos la interfaz la cual contiene las cabeceras de nuestros metodos
 
     //añade un usuario a la red
     void addUser(String user, List<TopicOfInterest> topicsOfInterest);

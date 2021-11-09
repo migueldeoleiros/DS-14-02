@@ -1,11 +1,10 @@
 package e3;
 
-import javax.naming.NameNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Network {
-    NetworkManager nm;
+    NetworkManager nm;      //Creamos una instancia de nuestra interfaz
     public Network(NetworkManager nm) {
         this.nm = nm;
     }
@@ -32,8 +31,8 @@ public class Network {
         return nm.getInterestsUser(user);
     }
 
-    public List<TopicOfInterest> compareUsers(String user1, String user2) {
-        List<TopicOfInterest> listTopics = new ArrayList<>();
+    public List<TopicOfInterest> compareUsers(String user1, String user2) {     //Retornamos los temas que tienen en
+        List<TopicOfInterest> listTopics = new ArrayList<>();                   //comun dos users
         List<TopicOfInterest> topics1 = nm.getInterestsUser(user1);
         List<TopicOfInterest> topics2 = nm.getInterestsUser(user2);
 

@@ -2,7 +2,7 @@ package e2;
 
 import java.util.*;
 
-public class Anuncio implements Comparable<Anuncio>{
+public class Anuncio implements Comparable<Anuncio>{        //Implementa el interfaz Comparable
     public Integer referencia;
     public Apartamento apartamento;
 
