@@ -12,6 +12,8 @@ class ColegioTest {
     void setUp(){
         Howarts = new Colegio();
         Howarts.addEstudiante("Hermione", "Granger", 12, 3, Residente.Casa.Gryffindor);
+        Howarts.addEstudiante("Juan","Gomez",22,5, Residente.Casa.Hufflepuff);
+        Howarts.addFantasma("Lebron","James",36,1, Residente.Casa.Ravenclaw);
         Howarts.addFantasma("Baron", "Sanguinario", 150, 1, Residente.Casa.Slytherin);
         Howarts.addGuardabosque("Rubeus","Hagrid",45,2, true);
         Howarts.addDocente("Minerva","McGonagall",70,1, Docente.Asignatura.Transformaciones);
@@ -25,6 +27,8 @@ class ColegioTest {
     void testRecompensa(){
         assertEquals("""
                 Hermione Granger(Estudiante de Gryffindor, 3 horrocruxes): 270.0 galeones
+                Juan Gomez(Estudiante de Hufflepuff, 5 horrocruxes): 450.0 galeones
+                Lebron James(Fantasma de Ravenclaw, 1 horrocruxes): 80.0 galeones
                 Baron Sanguinario(Fantasma de Slytherin, 1 horrocruxes): 160.0 galeones
                 Rubeus Hagrid(Guardabosques, 2 horrocruxes): 150.0 galeones
                 Minerva McGonagall(Docente de Transformaciones, 1 horrocruxes): 50.0 galeones
@@ -33,7 +37,7 @@ class ColegioTest {
                 Leo Messi(Docente de Historia, 0 horrocruxes): 0.0 galeones
                 Usain Bolt(Docente de Pociones, 0 horrocruxes): 0.0 galeones
                 Donald Trump(Docente de Herbologia, 10 horrocruxes): 500.0 galeones
-                La recompensa total del Colegio Howarts es de 1205.0 galeones""",
+                La recompensa total del Colegio Howarts es de 1735.0 galeones""",
                 Howarts.imprimirRecompensas());
     }
     @Test
