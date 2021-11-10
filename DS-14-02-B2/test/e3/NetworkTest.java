@@ -1,5 +1,6 @@
 package e3;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -13,7 +14,7 @@ class NetworkTest {
     TopicOfInterest tech = new TopicOfInterest("technology");
     TopicOfInterest languages = new TopicOfInterest("languages");
 
-    void addRemoveUserTest(Network network){
+    void addRemoveUserTest(@NotNull Network network){
         List<String> userList = List.of(new String[]{"Paco", "Alberto", "AlbertoJunior", "Laura", "Roberto"});
         assertEquals(userList, network.getUsers());
 
@@ -23,7 +24,7 @@ class NetworkTest {
         assertEquals(userList, network.getUsers());
     }
 
-    void addRemoveInterestTest(Network network, TopicOfInterest[] interests){
+    void addRemoveInterestTest(@NotNull Network network, TopicOfInterest[] interests){
         assertEquals(Arrays.asList(interests), network.getInterestsUser("Paco"));
 
         network.addInterest("Paco", languages);
@@ -33,16 +34,16 @@ class NetworkTest {
         assertEquals(Arrays.asList(interests2), network.getInterestsUser("Paco"));
     }
 
-    void getInterestsTest(Network network){
+    void getInterestsTest(@NotNull Network network){
         TopicOfInterest[] interests = {politics,languages,science,tech,sports};
         assertEquals(Arrays.asList(interests), network.getInterests());
     }
 
-    void compareTest(Network network, TopicOfInterest[] interests1){
+    void compareTest(@NotNull Network network, TopicOfInterest[] interests1){
         assertEquals(Arrays.asList(interests1), network.compareUsers("Roberto", "Alberto"));
     }
 
-    void toStringTest(Network network){
+    void toStringTest(@NotNull Network network){
         assertEquals("""
                         Paco: politics languages\s
                         Alberto: science technology\s
@@ -52,7 +53,7 @@ class NetworkTest {
         , network.toString());
     }
 
-    void testNetwork(Network network){
+    void testNetwork(@NotNull Network network){
         TopicOfInterest[] interests = {sports,politics};
         network.addUser("Paco", Arrays.asList(interests));
 

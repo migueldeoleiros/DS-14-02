@@ -12,39 +12,85 @@ public class Colegio {
 
     public Colegio(){}
 
-    private void exceptionTest(int edad, int horrocrux, String nombre, String apellido){   //Test de excepciones, para comprobar que un
-        if(nombre==null||apellido==null)throw new IllegalArgumentException();              //integrante es valido antes de añadirlo
+    /**
+     * comprueba al valided de los parametros.
+     *
+     * @throws IllegalArgumentException si el nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    private void exceptionTest(int edad, int horrocrux, String nombre, String apellido){
+        if(nombre==null||apellido==null)throw new IllegalArgumentException();//integrante es valido antes de añadirlo
         if(edad<=0 || horrocrux<0)throw new IllegalArgumentException();
     }
-    public void addEstudiante(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){  //Metodo para añadir un estudiante
+
+    /**
+     * Anade un estudiante a la lista de residentes.
+     *
+     * @throws IllegalArgumentException si la casa, nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    public void addEstudiante(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
         exceptionTest(edad,horrocrux,nombre,apellido);
         if(casa==null) throw new IllegalArgumentException();
         e1.Residentes.Estudiante residente = new e1.Residentes.Estudiante(nombre, apellido, edad, horrocrux, casa);
         residentes.add(residente);
     }
-    public void addFantasma(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){      //Metodo para añadir un fantasma
+
+    /**
+     * Anade un fantasma a la lista de residentes.
+     *
+     * @throws IllegalArgumentException si la casa, nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    public void addFantasma(String nombre, String apellido, int edad, int horrocrux, Residente.Casa casa){
         exceptionTest(edad,horrocrux,nombre,apellido);
         if(casa==null) throw new IllegalArgumentException();
         e1.Residentes.Fantasma residente = new e1.Residentes.Fantasma(nombre, apellido, edad, horrocrux, casa);
         residentes.add(residente);
     }
-    public void addConserje(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){      //Metodo para añadir un conserje
+
+    /**
+     * Anade un conserje a la lista de personal.
+     *
+     * @throws IllegalArgumentException si el nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    public void addConserje(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
         exceptionTest(edad,horrocrux,nombre,apellido);
         e1.Personales.Conserje personal = new e1.Personales.Conserje(nombre, apellido, edad, horrocrux, nocturnidad);
         personales.add(personal);
     }
-    public void addDocente(String nombre, String apellido, int edad, int horrocrux, Docente.Asignatura asignatura){     //Metodo para añadir
-        exceptionTest(edad,horrocrux,nombre,apellido);                                                                  //un docente
+
+    /**
+     * Anade un docente a la lista de personal.
+     *
+     * @throws IllegalArgumentException si el nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    public void addDocente(String nombre, String apellido, int edad, int horrocrux, Docente.Asignatura asignatura){
+        exceptionTest(edad,horrocrux,nombre,apellido);
         if(asignatura==null) throw new IllegalArgumentException();
         e1.Personales.Docente personal = new e1.Personales.Docente(nombre, apellido, edad, horrocrux, asignatura);
         personales.add(personal);
     }
-    public void addGuardabosque(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){      //Metodo para añadir un
-        exceptionTest(edad,horrocrux,nombre,apellido);                                                              //guardabosque
+
+    /**
+     * Anade un guardabosques a la lista de personal.
+     *
+     * @throws IllegalArgumentException si el nombre o apellido son nulos
+     *      o la edad y horrocruxes son menores que 0
+     */
+    public void addGuardabosque(String nombre, String apellido, int edad, int horrocrux, boolean nocturnidad){
+        exceptionTest(edad,horrocrux,nombre,apellido);
         e1.Personales.Guardabosque personal = new e1.Personales.Guardabosque(nombre, apellido, edad, horrocrux, nocturnidad);
         personales.add(personal);
     }
 
+    /**
+     * Lista de personas con su recompaensa por horrocruxes y la suma total de ellas.
+     *
+     * @return String con la lista de personas con la recompensa total y para cada uno de ellos
+     */
     public String imprimirRecompensas(){
         StringBuilder output = new StringBuilder();
         float total=0;
@@ -62,6 +108,11 @@ public class Colegio {
         return output.toString();
     }
 
+    /**
+     * Lista de personal con su salario y la suma total de ellos.
+     *
+     * @return String con la lista de personal con el salario total y para cada uno de ellos
+     */
     public String imprimirSalarios(){
         StringBuilder output = new StringBuilder();
         int total=0;

@@ -91,4 +91,16 @@ class GestorTest {
         assertEquals(anunciosSortedHabitaciones,gestor.sort(comparator));
     }
 
+    @Test
+    void exceptioTest(){
+        assertThrows(IllegalArgumentException.class,() ->
+                gestor.addAnuncio(-100000,13000,100,-15179,2,3,4));
+        assertThrows(IllegalArgumentException.class,() ->
+                gestor.addAnuncio(110000,2000,110,15123,-3,2,8));
+        assertThrows(IllegalArgumentException.class,() ->
+                gestor.addAnuncio(300000,-10000,200,13674,2,-4,1));
+        assertThrows(IllegalArgumentException.class,() ->
+                gestor.addAnuncio(75000,1000,-75,32600,1,1,7));
+    }
+
 }
