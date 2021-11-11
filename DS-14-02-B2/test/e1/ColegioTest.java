@@ -66,5 +66,10 @@ class ColegioTest {
             Howarts.addConserje("Argus",null,0,-9776, true));
         assertThrows(IllegalArgumentException.class,() ->
             Howarts.addGuardabosque(null,"Hagrid",-987,0, true));
+
+        //test para docentes con la misma asignatura
+        Howarts.addDocente("Severus","Snape",50,2, Docente.Asignatura.Pociones);
+        assertThrows(IllegalArgumentException.class,() ->
+                Howarts.addDocente("Minerva","McGonagall",70,1, Docente.Asignatura.Pociones));
     }
 }

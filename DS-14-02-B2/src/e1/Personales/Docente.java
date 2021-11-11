@@ -2,7 +2,7 @@ package e1.Personales;
 
 public class Docente extends e1.Personal {
     public enum Asignatura {Defensa,Transformaciones,Pociones,Herbologia,Historia}
-    Asignatura asignatura;
+    public Asignatura asignatura;
     public Docente(String nombre, String apellido, int edad,int horrocrux, Asignatura asignatura) {
         super.set(nombre, apellido, edad, horrocrux);
         this.asignatura=asignatura;
