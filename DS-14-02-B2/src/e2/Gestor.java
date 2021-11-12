@@ -9,12 +9,16 @@ public class Gestor {
     private final List<Anuncio> anuncios= new ArrayList<>();      //Creamos una lista de anuncios
     private int count=0;        //Creamos un contador para el numero de referencia de cada anuncio
 
-
+    /**
+     * Asigna el criterio de ordenacion.
+     * @param comparator el comparador con el criterio a ordenar
+     */
     public void setComparator(Comparator<Anuncio> comparator){
         this.comparator=comparator;
     }
+
     /**
-     * comprueba al valided de los parametros.
+     * comprueba al validez de los parametros.
      * @throws IllegalArgumentException si cualquiera de los valores es menor que 0
      */
     private void exceptionTest(int precioBase, int precioGaraje, int metros, int postal, int aseos, int habitaciones) {
