@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class NetworkManager2 implements NetworkManager{
-    Map<String, List<TopicOfInterest>> map = new LinkedHashMap<>();     //Creamos nuestro hashMapLinkeado
+    private final Map<String, List<TopicOfInterest>> map = new LinkedHashMap<>();     //Creamos nuestro hashMapLinkeado
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {      //Añadimos un user

@@ -1,7 +1,7 @@
 package e3;
 
 public class TopicOfInterest {
-    String TopicName;
+    private final String TopicName;
 
     public TopicOfInterest(String topicName) {
         this.TopicName = topicName;

@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class NetworkManager1 implements NetworkManager {
-    List<List<TopicOfInterest>> matriz= new ArrayList<>();      //Creamos nuestra matriz de usuarios y sus relativos
-    List<String> userList= new ArrayList<>();                   //temas de interes, asi como la propia lista de users
+    private final List<List<TopicOfInterest>> matriz= new ArrayList<>();      //Creamos nuestra matriz de usuarios y sus relativos
+    private final List<String> userList= new ArrayList<>();                   //temas de interes, asi como la propia lista de users
 
     @Override
     public void addUser(String user, List<TopicOfInterest> topicsOfInterest) {      //Agregamos un user a la matriz

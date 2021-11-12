@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Network {
-    NetworkManager nm;      //Creamos una instancia de nuestra interfaz
+    private final NetworkManager nm;      //Creamos una instancia de nuestra interfaz
 
     /**
      * constructor de Network.
