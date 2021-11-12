@@ -5,9 +5,14 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Gestor {
-    List<Anuncio> anuncios= new ArrayList<>();      //Creamos una lista de anuncios
+    private Comparator<Anuncio> comparator=null;
+    private final List<Anuncio> anuncios= new ArrayList<>();      //Creamos una lista de anuncios
     private int count=0;        //Creamos un contador para el numero de referencia de cada anuncio
 
+
+    public void setComparator(Comparator<Anuncio> comparator){
+        this.comparator=comparator;
+    }
     /**
      * comprueba al valided de los parametros.
      * @throws IllegalArgumentException si cualquiera de los valores es menor que 0
@@ -29,9 +34,8 @@ public class Gestor {
 
     /**
      * Ordenamos nuestra lista segun el criterio del comparador que usemos
-     * @param comparator con el orden a ordenar
      */
-    public List<Anuncio> sort(Comparator<Anuncio> comparator){
+    public List<Anuncio> sort(){
         anuncios.sort(comparator);
         return anuncios;
     }

@@ -3,13 +3,41 @@ package e2;
 import java.util.Objects;
 
 public class Apartamento {
-    public Integer precioBase;
-    public Integer precioGaraje;
-    public Integer metros;
-    public Integer postal;
-    public Integer aseos;
-    public Integer habitaciones;
-    public Integer piso;
+    private final Integer precioBase;
+    private final Integer precioGaraje;
+    private final Integer metros;
+    private final Integer postal;
+    private final Integer aseos;
+    private final Integer habitaciones;
+    private final Integer piso;
+
+    public Integer getPrecioBase() {
+        return precioBase;
+    }
+
+    public Integer getPrecioGaraje() {
+        return precioGaraje;
+    }
+
+    public Integer getMetros() {
+        return metros;
+    }
+
+    public Integer getPostal() {
+        return postal;
+    }
+
+    public Integer getAseos() {
+        return aseos;
+    }
+
+    public Integer getHabitaciones() {
+        return habitaciones;
+    }
+
+    public Integer getPiso() {
+        return piso;
+    }
 
     public Apartamento(int precioBase, int precioGaraje, int metros, int postal, int aseos, int habitaciones, int piso) {
         this.precioBase = precioBase;

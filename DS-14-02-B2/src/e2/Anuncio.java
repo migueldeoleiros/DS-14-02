@@ -3,8 +3,12 @@ package e2;
 import java.util.*;
 
 public class Anuncio implements Comparable<Anuncio>{        //Implementa el interfaz Comparable
-    public Integer referencia;
-    public Apartamento apartamento;
+    private final Integer referencia;
+    private final Apartamento apartamento;
+
+    public Apartamento getApartamento() {
+        return apartamento;
+    }
 
     public Anuncio(Integer referencia, Integer precioBase, Integer precioGaraje, Integer metros, Integer postal, Integer aseos, Integer habitaciones, Integer piso) {
         this.referencia = referencia;

@@ -38,7 +38,7 @@ class GestorTest {
         anuncios.add(anuncio3);
         anuncios.add(anuncio4);
 
-        assertEquals(anuncios,gestor.sort(null));
+        assertEquals(anuncios,gestor.sort());
     }
     @Test
     void sortPrecioBaseTest(){
@@ -48,7 +48,8 @@ class GestorTest {
         anunciosSortedBase.add(anuncio3);
 
         Comparator<Anuncio> comparator = new PrecioBaseComparator();
-        assertEquals(anunciosSortedBase,gestor.sort(comparator));
+        gestor.setComparator(comparator);
+        assertEquals(anunciosSortedBase,gestor.sort());
     }
     @Test
     void sortPrecioTotalTest(){
@@ -58,7 +59,8 @@ class GestorTest {
         anunciosSortedTotal.add(anuncio3);
 
         Comparator<Anuncio> comparator = new PrecioTotalComparator();
-        assertEquals(anunciosSortedTotal,gestor.sort(comparator));
+        gestor.setComparator(comparator);
+        assertEquals(anunciosSortedTotal,gestor.sort());
     }
     @Test
     void sortAseosTest(){
@@ -68,7 +70,8 @@ class GestorTest {
         anunciosSortedAseos.add(anuncio2);
 
         Comparator<Anuncio> comparator = new AseosComparator();
-        assertEquals(anunciosSortedAseos,gestor.sort(comparator));
+        gestor.setComparator(comparator);
+        assertEquals(anunciosSortedAseos,gestor.sort());
     }
     @Test
     void sortHabitacionesTest(){
@@ -78,7 +81,8 @@ class GestorTest {
         anunciosSortedHabitaciones.add(anuncio3);
 
         Comparator<Anuncio> comparator = new HabitacionesComparator();
-        assertEquals(anunciosSortedHabitaciones,gestor.sort(comparator));
+        gestor.setComparator(comparator);
+        assertEquals(anunciosSortedHabitaciones,gestor.sort());
     }
     @Test
     void sortMetrosTest(){
@@ -88,7 +92,8 @@ class GestorTest {
         anunciosSortedHabitaciones.add(anuncio3);
 
         Comparator<Anuncio> comparator = new MetrosComparator();
-        assertEquals(anunciosSortedHabitaciones,gestor.sort(comparator));
+        gestor.setComparator(comparator);
+        assertEquals(anunciosSortedHabitaciones,gestor.sort());
     }
 
     @Test
