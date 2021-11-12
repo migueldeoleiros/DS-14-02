@@ -2,7 +2,7 @@ package e1.Personales;
 
 public class Docente extends e1.Personal {
     public enum Asignatura {Defensa,Transformaciones,Pociones,Herbologia,Historia}
-    public Asignatura asignatura;
+    private final Asignatura asignatura;
     public Docente(String nombre, String apellido, int edad,int horrocrux, Asignatura asignatura) {
         super.set(nombre, apellido, edad, horrocrux);
         this.asignatura=asignatura;
@@ -13,20 +13,24 @@ public class Docente extends e1.Personal {
             case Herbologia -> salario=250;
             case Historia -> salario=200;
         }
-        recompensa = horrocrux*50;
-        if(asignatura == Asignatura.Defensa) recompensa*=0.75;
+        super.setRecompensa(horrocrux*50);
+        if(asignatura == Asignatura.Defensa) super.setRecompensa(getRecompensa()*0.75f);
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
     }
 
     @Override
     public String toString() {
-        return  nombre + " " + apellido + "(" +
+        return  super.getNombre() + " " + super.getApellido() + "(" +
                 "Docente de " + asignatura + ", "
-                + horrocrux + " horrocruxes" + "): " +
-                recompensa + " galeones";
+                + super.getHorrocrux() + " horrocruxes" + "): " +
+                super.getRecompensa() + " galeones";
     }
     @Override
     public String toStringSalario() {
-        return  nombre + " " + apellido + "(" +
+        return  super.getNombre() + " " + super.getApellido() + "(" +
                 "Docente de " + asignatura + "): " +
                 salario + " galeones";
     }

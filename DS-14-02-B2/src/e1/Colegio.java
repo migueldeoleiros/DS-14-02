@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Colegio {
 
-    List<Personal> personales = new ArrayList<>();    //Almacenamos los miembros del colegio que pertenecen al personal
-    List<Residente> residentes = new ArrayList<>();   //Almacenamos los miembros residentes del colegio
-    List<Docente.Asignatura> asignaturas = new ArrayList<>(5);
+    private final List<Personal> personales = new ArrayList<>();    //Almacenamos los miembros del colegio que pertenecen al personal
+    private final List<Residente> residentes = new ArrayList<>();   //Almacenamos los miembros residentes del colegio
+    private final List<Docente.Asignatura> asignaturas = new ArrayList<>(5);
 
     public Colegio(){}
 
@@ -72,8 +72,8 @@ public class Colegio {
         exceptionTest(edad,horrocrux,nombre,apellido);
         if(asignatura==null) throw new IllegalArgumentException();
         e1.Personales.Docente personal = new e1.Personales.Docente(nombre, apellido, edad, horrocrux, asignatura);
-        if(asignaturas.contains(personal.asignatura)) throw new IllegalArgumentException();
-        asignaturas.add(personal.asignatura);
+        if(asignaturas.contains(personal.getAsignatura())) throw new IllegalArgumentException();
+        asignaturas.add(personal.getAsignatura());
         personales.add(personal);
     }
 
