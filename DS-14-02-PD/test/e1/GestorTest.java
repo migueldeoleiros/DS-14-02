@@ -15,6 +15,7 @@ class GestorTest {
     Gestor gestor = new Gestor();
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     Date date = new Date();
+    Date date2 = new Date();
     Billete billete1, billete2, billete3, billete4;
     List<Billete> listaBilletes = new ArrayList<>();
 
@@ -71,10 +72,12 @@ class GestorTest {
     @Test
     void fullTest() throws ParseException {
         Requisitos requisitos;
-        date =formatter.parse("11/01/2022");
+        date = formatter.parse("11/01/2022");
+        date2 = formatter.parse("10/01/2022");
         requisitos = new Requisitos.Builder()
-                .origen("Coruna").destino("Madrid").precio(50).fecha(date).build();
+                .origen("Coruna","Santiago").destino("Madrid").precio(50).fecha(date,date2).build();
 
+        listaBilletes.add(billete3);
         listaBilletes.add(billete4);
         assertEquals(listaBilletes, gestor.findBillete(requisitos));
     }
