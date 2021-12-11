@@ -13,9 +13,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GestorTest {
     Gestor gestor = new Gestor();
-    Billete billete1, billete2, billete3, billete4;
-    Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+    Date date = new Date();
+    Billete billete1, billete2, billete3, billete4;
+    List<Billete> listaBilletes = new ArrayList<>();
 
     @BeforeEach
     void setUp() throws ParseException {
@@ -27,12 +28,54 @@ class GestorTest {
         billete3 = new Billete("Santiago", "Madrid", date, 40);
         date =formatter.parse("11/01/2022");
         billete4 = new Billete("Coruna", "Madrid", date, 45);
+
+        gestor.addBillete(billete1,billete2,billete3,billete4);
     }
     @Test
-    void basicTest(){
+    void testOrigen(){
         Requisitos requisitos;
-        requisitos = new Requisitos.Builder().origen("Coruna","Santiago").precio(43).build();
-        gestor.findBillete(requisitos);
-    }
+        requisitos = new Requisitos.Builder().origen("Coruna").build();
 
+        listaBilletes.add(billete1);
+        listaBilletes.add(billete4);
+        assertEquals(listaBilletes, gestor.findBillete(requisitos));
+    }
+    @Test
+    void testDestino(){
+        Requisitos requisitos;
+        requisitos = new Requisitos.Builder().destino("Madrid").build();
+
+        listaBilletes.add(billete3);
+        listaBilletes.add(billete4);
+        assertEquals(listaBilletes, gestor.findBillete(requisitos));
+    }
+    @Test
+    void testfecha() throws ParseException {
+        Requisitos requisitos;
+        date =formatter.parse("07/01/2022");
+        requisitos = new Requisitos.Builder().fecha(date).build();
+
+        listaBilletes.add(billete2);
+        assertEquals(listaBilletes, gestor.findBillete(requisitos));
+    }
+    @Test
+    void testPrice(){
+        Requisitos requisitos;
+        requisitos = new Requisitos.Builder().precio(43).build();
+
+        listaBilletes.add(billete1);
+        listaBilletes.add(billete2);
+        listaBilletes.add(billete3);
+        assertEquals(listaBilletes, gestor.findBillete(requisitos));
+    }
+    @Test
+    void fullTest() throws ParseException {
+        Requisitos requisitos;
+        date =formatter.parse("11/01/2022");
+        requisitos = new Requisitos.Builder()
+                .origen("Coruna").destino("Madrid").precio(50).fecha(date).build();
+
+        listaBilletes.add(billete4);
+        assertEquals(listaBilletes, gestor.findBillete(requisitos));
+    }
 }
