@@ -29,7 +29,7 @@ class ListaNodosTest {
     void ordenarDepFuerte(){
         DepFuerte ordenacionDF = new DepFuerte();
         Character[] arrayOrdenado =
-                new Character[]{'C', 'A', 'D', 'G', 'F', 'E', 'H', 'J'};
+                new Character[]{'C', 'A', 'B', 'D', 'G', 'F', 'E', 'H', 'J'};
         List<Character> listaOrdenada = new ArrayList<>(Arrays.asList(arrayOrdenado));
 
         listaNodos.setTipoOrdenacion(ordenacionDF);
@@ -40,7 +40,7 @@ class ListaNodosTest {
     void ordenarDepDebil(){
         DepDebil ordenacionDD = new DepDebil();
         Character[] arrayOrdenado =
-                new Character[]{'C', 'A', 'D', 'E', 'F', 'G', 'H', 'J'};
+                new Character[]{'C', 'A', 'B', 'D', 'E', 'F', 'G', 'H', 'J'};
         List<Character> listaOrdenada = new ArrayList<>(Arrays.asList(arrayOrdenado));
 
         listaNodos.setTipoOrdenacion(ordenacionDD);
@@ -51,7 +51,7 @@ class ListaNodosTest {
     void ordenarDepFuerte(){
         OrdenJerarq ordenacionJ = new OrdenJerarq();
         Character[] arrayOrdenado =
-                new Character[]{'C', 'A', 'D', 'G', 'F', 'E', 'H', 'J'};
+                new Character[]{'C', 'G', 'A', 'F', 'H', 'B', 'D', 'E', 'J'};
         List<Character> listaOrdenada = new ArrayList<>(Arrays.asList(arrayOrdenado));
 
         listaNodos.setTipoOrdenacion(ordenacionJ);
