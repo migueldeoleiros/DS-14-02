@@ -4,15 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class listaNodos {
+public class ListaNodos {
     private final Map<Character,List<Character>> nodos= new HashMap<>();
-    private final tipoOrdenacion ordenacion;
+    private TipoOrdenacion ordenacion;
 
-    public listaNodos(tipoOrdenacion ordenacion){
+    public ListaNodos(){}
+
+    public void setTipoOrdenacion(TipoOrdenacion ordenacion){
         this.ordenacion=ordenacion;
     }
 
-    public tipoOrdenacion getTipoOrdenacion(){
+    public TipoOrdenacion getTipoOrdenacion(){
         return ordenacion;
     }
 
