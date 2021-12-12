@@ -1,6 +1,7 @@
 package e2;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ListaNodosTest {
     ListaNodos listaNodos = new ListaNodos();
 
-    @BeforeAll
+    @BeforeEach
     void setUp(){
         listaNodos.addHijo('C','A');
         listaNodos.addHijo('C','F');
@@ -48,7 +49,7 @@ class ListaNodosTest {
     }
 
     @Test
-    void ordenarDepFuerte(){
+    void ordenarJerarq(){
         OrdenJerarq ordenacionJ = new OrdenJerarq();
         Character[] arrayOrdenado =
                 new Character[]{'C', 'G', 'A', 'F', 'H', 'B', 'D', 'E', 'J'};
