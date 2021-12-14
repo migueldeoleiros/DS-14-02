@@ -17,10 +17,10 @@ public class DepFuerte implements TipoOrdenacion{
             for(List<Character> listHijo : nodos.values()) {
                 for (Character hijo : listHijo) {
                     if(hijo == padre) {
-                        out=true;break;
+                        out=true;
+                        break;
                     }
                 }
-                if(out)break;
             }
             if(!out){
                 ordenada.add(padre);

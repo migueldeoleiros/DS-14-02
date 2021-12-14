@@ -22,7 +22,6 @@ public class OrdenJerarq implements TipoOrdenacion{
                             break;
                         }
                     }
-                    if (out) break;
                 }
                 if (!out || sinPadre.contains(padre)) {
                     ordenada.add(padre);

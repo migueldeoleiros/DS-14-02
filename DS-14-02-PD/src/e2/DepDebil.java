@@ -18,10 +18,10 @@ public class DepDebil implements TipoOrdenacion{
             for(List<Character> listHijo : nodos.values()) {
                 for (Character hijo : listHijo) {
                     if(hijo == padre ) {
-                        out=true;break;
+                        out=true;
+                        break;
                     }
                 }
-                if(out)break;
             }
             if(!out || sinPadre.contains(padre)){
                 ordenada.add(padre);
