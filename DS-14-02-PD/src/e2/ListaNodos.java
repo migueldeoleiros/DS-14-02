@@ -12,10 +12,6 @@ public class ListaNodos {
         this.ordenacion=ordenacion;
     }
 
-    public TipoOrdenacion getTipoOrdenacion(){
-        return ordenacion;
-    }
-
     public List<Character> ordenar(){
         return ordenacion.ordenar(sortbykey());
     }
