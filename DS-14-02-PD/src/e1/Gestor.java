@@ -18,26 +18,26 @@ public class Gestor {
             boolean or=false,dest=false,fec=false,pre=false;
             if(!requisitos.getOrigen().isEmpty()){
                 for(String origen : requisitos.getOrigen())
-                    if (billete.origen.equals(origen)) {
+                    if (billete.origen().equals(origen)) {
                         or = true;
                         break;
                     }
             }else or=true;
             if(!requisitos.getDestino().isEmpty()) {
                 for (String destino : requisitos.getDestino())
-                    if (billete.destino.equals(destino)) {
+                    if (billete.destino().equals(destino)) {
                         dest = true;
                         break;
                     }
             }else dest=true;
             if(!requisitos.getFecha().isEmpty()) {
                 for (Date fecha : requisitos.getFecha())
-                    if (billete.fecha.equals(fecha)) {
+                    if (billete.fecha().equals(fecha)) {
                         fec = true;
                         break;
                     }
             }else fec=true;
-            if(requisitos.getPrecio() == 0 || billete.precio <= requisitos.getPrecio())
+            if(requisitos.getPrecio() == 0 || billete.precio() <= requisitos.getPrecio())
                 pre=true;
 
             if(or&&dest&&fec&&pre) resultado.add(billete);
