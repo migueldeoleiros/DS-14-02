@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ListaNodosTest {
     ListaNodos listaNodos1 = new ListaNodos();
     ListaNodos listaNodos2 = new ListaNodos();
-    ListaNodos listaNodos3 = new ListaNodos();
 
     @BeforeEach
     void setUp(){
