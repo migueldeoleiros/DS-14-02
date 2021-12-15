@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ListaNodosTest {
     ListaNodos listaNodos1 = new ListaNodos();
     ListaNodos listaNodos2 = new ListaNodos();
+    ListaNodos listaNodos3 = new ListaNodos();
 
     @BeforeEach
     void setUp(){
@@ -33,7 +34,6 @@ class ListaNodosTest {
         listaNodos2.addHijo('C','B');
         listaNodos2.addHijo('H','B');
         listaNodos2.addHijo('H','E');
-
     }
 
     @Test
@@ -78,10 +78,10 @@ class ListaNodosTest {
         List<Character> listaOrdenada1 = new ArrayList<>(Arrays.asList(arrayOrdenado1));
         List<Character> listaOrdenada2 = new ArrayList<>(Arrays.asList(arrayOrdenado2));
 
+
         listaNodos1.setTipoOrdenacion(ordenacionJ);
         assertEquals(listaOrdenada1, listaNodos1.ordenar());
         listaNodos2.setTipoOrdenacion(ordenacionJ);
         assertEquals(listaOrdenada2, listaNodos2.ordenar());
-
     }
 }
