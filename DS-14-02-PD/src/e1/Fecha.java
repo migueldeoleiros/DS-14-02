@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Fecha implements Componente{
+public final class Fecha implements Componente{
     private final Date fecha;
     private final List<Billete> listaBilletes;
 

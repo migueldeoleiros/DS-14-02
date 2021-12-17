@@ -3,7 +3,7 @@ package e1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OR implements Componente{
+public final class OR implements Componente{
     private final Componente a;
     private final Componente b;
 

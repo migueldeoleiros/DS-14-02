@@ -3,7 +3,7 @@ package e1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AND implements Componente{
+public final class AND implements Componente{
     private final Componente a;
     private final Componente b;
 

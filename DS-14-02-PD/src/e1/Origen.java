@@ -3,7 +3,7 @@ package e1;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Origen implements Componente{
+public final class Origen implements Componente{
     private final String origen;
     private final List<Billete> listaBilletes;
 

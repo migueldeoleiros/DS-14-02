@@ -3,7 +3,7 @@ package e1;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Precio implements Componente{
+public final class Precio implements Componente{
     private final float precio;
     private final List<Billete> listaBilletes;
 
