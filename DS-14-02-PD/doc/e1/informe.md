@@ -20,7 +20,7 @@ Usamos el patrón Inmutable para hacer que nuestros Billetes solo puedan ser mod
 vez creados ya no se puede cambiar ninguno de sus valores (declarando sus atributos final, private.., declarando la clase como final..)
 También nuestros **Componentes Concretos** son inmutables.  
 ![Diagrama de Clases](classDiagram.jpg)
-### Diagrama Dinámico
+## Diagrama Dinámico
 El diagrama de secuencia muestra como funciona nuestro método *find* en la clase *OR* (sería exactamente igual en *AND*), llamando al método
 *find* en cada uno de los *Componentes Concretos*  
 ![Diagrama de Secuencia](sequenceDiagram.jpg)
