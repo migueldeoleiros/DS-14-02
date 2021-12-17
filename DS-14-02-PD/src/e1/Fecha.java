@@ -1,8 +1,8 @@
 package e1;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Fecha implements Componente{
     private final Date fecha;
@@ -14,10 +14,6 @@ public class Fecha implements Componente{
     }
     @Override
     public List<Billete> find() {
-        List<Billete> comparados = new ArrayList<>();
-        for(Billete billete : listaBilletes)
-            if(billete.fecha().equals(fecha))
-                comparados.add(billete);
-        return comparados;
+        return listaBilletes.stream().filter(Billete -> Billete.fecha().equals(this.fecha)).collect(Collectors.toList());
     }
 }

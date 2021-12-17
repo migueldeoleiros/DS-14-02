@@ -1,8 +1,7 @@
 package e1;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Origen implements Componente{
     private final String origen;
@@ -14,10 +13,7 @@ public class Origen implements Componente{
     }
     @Override
     public List<Billete> find() {
-        List<Billete> comparados = new ArrayList<>();
-        for(Billete billete : listaBilletes)
-            if(Objects.equals(billete.origen(), origen))
-                comparados.add(billete);
-        return comparados;
+        return listaBilletes.stream().filter(Billete -> Billete.origen().equals(this.origen)).collect(Collectors.toList());
+
     }
 }

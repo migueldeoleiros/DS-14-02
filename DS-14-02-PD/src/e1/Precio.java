@@ -1,7 +1,7 @@
 package e1;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Precio implements Componente{
     private final float precio;
@@ -13,10 +13,6 @@ public class Precio implements Componente{
     }
     @Override
     public List<Billete> find() {
-        List<Billete> comparados = new ArrayList<>();
-        for(Billete billete : listaBilletes)
-            if(billete.precio() <= precio)
-                comparados.add(billete);
-        return comparados;
+        return listaBilletes.stream().filter(Billete -> Billete.precio()<=(this.precio)).collect(Collectors.toList());
     }
 }
