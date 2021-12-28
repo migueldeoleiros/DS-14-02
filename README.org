@@ -23,43 +23,43 @@ EL ejercicio consistía en crear una clase *StringCount* con los siguientes mét
 
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e2][Ejercicio 2]] Descenso de pendientes
 Dada una matriz con puntos(*.*) y almohadillas (*#*) donde los puntos representan vacios y las amohadillas representan árboles debemos contar cuantos árboles son encontrados por un esquiador recorriendo la matriz con dos estrategias diferentes.
-***** Estrategia downTheSlope
-El esquiador se moverá de izquierda a derecha pasando por todas las casillas
-***** Estrategia JumpTheSlope
-El esquiador se moverá de izquierda a derecha dando saltos y solo contaremos los árboles encontrados en las posiciones iniciales.
+- *Estrategia downTheSlope*\\
+  El esquiador se moverá de izquierda a derecha pasando por todas las casillas
+- *Estrategia JumpTheSlope*\\
+  El esquiador se moverá de izquierda a derecha dando saltos y solo contaremos los árboles encontrados en las posiciones iniciales.
 
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e3][Ejercicio 3]] Melodías y notas
 El ejercicio consistía en crear una clase *Melody* con los siguientes métodos: \\
 A mayores nosotros creamos una clase auxiliar *Note*
-***** Melody
-Crea una instancia de Melody vacía.
-***** addNote
-Añade una nota dada al final de la melodía.
-***** getNote
-Devuelve la nota en una posición dada de la melodía.
-***** getAccidental
-Devuelve el accidental de una nota dada (si es bemol/sostenido)
-***** getTime
-Devuelve el tiempo que dura una nota.
-***** size
-Devuelve el número de notas en la melodía.
-***** getDUration
-Devuelve la duración de la melodía.
-***** equals
-Compara dos melodías teniendo en cuenta las posibles representaciones de una misma nota segun la teoría musical (DO#=Re♭ etc.)
-***** hashcode
-La representación en código de una melodía, teniendo en cuenta que dos melodías equivalentes según *equals* deben tener el mismo hashcode.
-***** toString
-La representación en String la melodía.
+- *Melody*\\
+  Crea una instancia de Melody vacía.
+- addNote
+  Añade una nota dada al final de la melodía.
+- *getNote*\\
+  Devuelve la nota en una posición dada de la melodía.
+- *getAccidental*\\
+  Devuelve el accidental de una nota dada (si es bemol/sostenido)
+- *getTime*\\
+  Devuelve el tiempo que dura una nota.
+- *size*\\
+  Devuelve el número de notas en la melodía.
+- *getDuration*\\
+  Devuelve la duración de la melodía.
+- *equals*\\
+  Compara dos melodías teniendo en cuenta las posibles representaciones de una misma nota segun la teoría musical (DO#=Re♭ etc.)
+- *hashcode*\\
+  La representación en código de una melodía, teniendo en cuenta que dos melodías equivalentes según /equals/ deben tener el mismo hashcode.
+- *toString*\\
+  La representación en String la melodía.
 
 
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e4][Ejercicio 4]] Calculadora por lotes
 El ejercicio consistía en implementar una calculadora que funcione por lotes, donde primero se añaden las operaciones y después se ejecutan todas ellas y se devuelve el resultado. Teníamos que implementar las siguientes funciones:
-***** cleanOperations
-Borra el estado interno de la calculadora.
-***** addOperation
-Añade una operación al estado interno de la calculadora dando la operación y el nuevo numero o números a operar.
-***** executeOperations
-Ejecuta las operaciones, devuelve el resultado y borra el estado interno de la calculadora.
-***** toString
-Devuelve en un String las operaciones guardadas en la calculadora hasta ahora.
+- *cleanOperations*\\
+  Borra el estado interno de la calculadora.
+- *addOperation*\\
+  Añade una operación al estado interno de la calculadora dando la operación y el nuevo numero o números a operar.
+- *executeOperations*\\
+  Ejecuta las operaciones, devuelve el resultado y borra el estado interno de la calculadora.
+- *toString*\\
+  Devuelve en un String las operaciones guardadas en la calculadora hasta ahora.
