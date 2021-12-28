@@ -12,13 +12,13 @@ Hay tres entregas separadas en diferentes carpetas que contienen projectos de In
 Todos los ejercicios están explicados en el pdf [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_1_DS_21-22.pdf][Boletin_1_DS_21-22.pdf]]
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e1][Ejercicio 1]] Coteo de palabras y carácteres
 EL ejercicio consistía en crear una clase *StringCount* con los siguientes métodos:
-- *countWords*
+- *countWords*\\
   Cuenta el número de palabras en un String dado.
-- *countChar*
+- *countChar*\\
   Cuenta el número de veces que se repite un caracter dado en un String dado.
-- *contCharIgnoringCase*
+- *contCharIgnoringCase*\\
   Cuenta el número de veces que se repite un caracter ya sea mayuscula o no en un String dado.
-- *isPasswordSafe*
+- *isPasswordSafe*\\
   Comprueba si un String cumple los requisitos para ser aceptado como contraseña
 
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e2][Ejercicio 2]] Descenso de pendientes
