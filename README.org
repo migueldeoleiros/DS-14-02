@@ -8,8 +8,9 @@ Este repositorio contiene las prácticas de la asigatura de Diseño de Software 
 ** Contenido de cada entrega
 Hay tres entregas separadas en diferentes carpetas que contienen projectos de IntelliJ con cada uno de los ejercicios separados en paquetes en las carpetas *src* y sus respectivos tests en las carpetas *test*.
 
-*** Boletín 1
-Todos los ejercicios están explicados en el pdf [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_1_DS_21-22.pdf][Boletin_1_DS_21-22.pdf]]
+*** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1][Boletín 1]]
+Todos los ejercicios están explicados en mayor extensión en el pdf [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_1_DS_21-22.pdf][Boletin_1_DS_21-22.pdf]]
+
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e1][Ejercicio 1]] Coteo de palabras y carácteres
 EL ejercicio consistía en crear una clase *StringCount* con los siguientes métodos:
 - *countWords*\\
@@ -52,7 +53,6 @@ A mayores nosotros creamos una clase auxiliar *Note*
 - *toString*\\
   La representación en String la melodía.
 
-
 **** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B1/src/e4][Ejercicio 4]] Calculadora por lotes
 El ejercicio consistía en implementar una calculadora que funcione por lotes, donde primero se añaden las operaciones y después se ejecutan todas ellas y se devuelve el resultado. Teníamos que implementar las siguientes funciones:
 - *cleanOperations*\\
@@ -63,3 +63,75 @@ El ejercicio consistía en implementar una calculadora que funcione por lotes, d
   Ejecuta las operaciones, devuelve el resultado y borra el estado interno de la calculadora.
 - *toString*\\
   Devuelve en un String las operaciones guardadas en la calculadora hasta ahora.
+
+*** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B2][Boletín 2]]
+Todos los ejercicios están explicados en mayor extensión en el pdf [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_2_DS_21-22.pdf][Boletin_2_DS_21-22.pdf]] \\
+Los Ejercicios de este segundo boletín ya son más complejos y los tests los tuvimos que crear nosotros. 
+
+**** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B2/src/e1][Ejercicio 1]] Integrantes del Colegio Howarts de Magia y Hechizería
+En este ejercicio tuvimos que crear clases para cada uno de los integrantes del colegio con diferentes características, estos a su vez divididos en Residentes y Personal para mostrar el uso de herencia en OOP.
+Cada integrante tendrá unas características específicas que vienen especificadas en el [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_2_DS_21-22.pdf][pdf]].
+También tuvimos que implementar una clase *Colegio* que contiene la lista de integrantes y los sigueintes métodos:
+- *imprimirRecompensa*\\
+  Devuelve un String con la información de cada integrante y la recompensa que merece según el número de horrocruxes destruidos con este formato:
+  #+begin_src 
+   Hermione Granger(Estudiante de Gryffindor, 3 horrocruxes): 270.0 galeones
+   Baron Sanguinario(Fantasma de Slytherin, 1 horrocruxes): 160.0 galeones
+   Rubeus Hagrid(Guardabosques, 2 horrocruxes): 150.0 galeones
+   Minerva McGonagall(Docente de Transformaciones, 1 horrocruxes): 50.0 galeones
+   Severus Snape(Docente de Defensa, 2 horrocruxes): 75.0 galeones
+   Argus Filch(Conserje, 0 horrocruxes): 0.0 galeones
+   La recompensa total del Colegio Howarts es de 705.0 galeones
+  #+end_src>
+- *imprimirSalario*\\
+  Devuelve un String con la información del personal y el salario de cada uno con este formato: 
+  #+begin_src 
+  Rubeus Hagrid(Guardabosques): 180 galeones
+  Minerva McGonagall(Docente de Transformaciones): 400 galeones
+  Severus Snape(Docente de Defensa): 500 galeones
+  Argus Filch(Conserje): 160 galeones
+  El gasto de Howarts en personal es de 1240 galeones
+  #+end_src>
+  
+**** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B2/src/e2][Ejercicio 2]] Alquiler de apartamentos
+El ejercicio consistía en implementar una aplicación de alquiler de apartamentos con diferentes ordenes de ordenación.
+El objetivo del ejercicio era aprender a usar las interfaces /Comparable/ y /Comparator/ para ordenar la lista.
+
+- *Anuncio*\\ 
+  Creamos una clase anuncio que contiene la información precio del piso, precio del garaje, metros cuadrados, código postal , número de aseos, número de habitaciones y piso.
+- *Comparators*\\
+  Creamos múltiples clases Comparator para ordenar la lista de anuncios de diferentes formas
+- *Gestor*\\ 
+  La clase Gestor contiene una lista de anuncios y un /Comparator/ que define como se ordenará la lista.\\
+  Para definir el método de ordenación usaremos el método /setComparator/  y para connseguir la nueva lista ordenada llamaremos al método /sort/.
+
+**** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B2/src/e3][Ejercicio 3]] Red de instereses de usuarios 
+En este ejercicio debiamos crear una red de usuarios donde cada uno de ellos pueda asignar una lista de interese.
+El objetivo era aprender a usar interfaces en este caso usando el patrón estrategia.\\
+
+La clase [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e3/Network.java][Network]] debia realizar las siguientes acciones:
+  - Dar de alta y de baja a los usuarios de la red. (*addUser* / *removeUser*)
+  - Modificar los temas que interesan a un determinado usuario. (*addInterest* / *removeInterest*)
+  - Obtener los temas que le interesan a un determinado usuario. (*getInterestsUser*)
+  - Encontrar a los usuarios interesados en un tema. (*getUsers*) 
+  - Buscar los temas de interés que tienen en común dos usuarios. (*compareUsers*)
+  - Obtener la lista de todos los temas que interesan a los usuarios de la red.(*getInterests*)
+  - Ver la información de todos los usuarios de la red, es decir, sus nombres de usuario junto con su correspondiente lista de temas de interés. (*toString*)
+
+Todo esto debía ser implementado de dos formas diferentes, donde entra en juego la interfaz [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e3/NetworkManager.java][NetworkManager]] que define los siguientes métodos que serán implementados por las dos estrategias diferentes.
+  - *addUser*
+  - *removeUser*
+  - *addInterest*
+  - *removeInterest*
+  - *getUsers*
+  - *getInterests*
+  - *getInterestsUser*
+
+La primera implementación [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e3/NetworkManager1.java][NetworkManager1]] usa una matriz donde uno de los indices es el usuario y el otro son los intereses. Basicamente usamos una lista de listas la primera siendo lso usuarios y la segunda siendo la lista de intereses.\\
+La segunda implementación [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e3/NetworkManager2.java][NetworkManager2]] usa un Map donde la llave es el usuario y el contenido la lista de intereses.
+
+**** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-B2/src/e4][Ejercicio 4]] Diseño UML 
+Este ejercicio es diferente a los previos, en lugar de escribir código el trabajo era hacer dos diagramas UML, uno de clases y otro de secuencia. El enunciado era mucho más ambiguo, siendo lo más complicado adivinar que era lo que quería decir.\\
+Se dispone de una clase Evento con diferentes métodos para agregar voluntarios y participantes, y conseguir informacion sobre ellos. A su vez tenemos diferentes clases para cada uno de las categorías de personas involucradas en el evento.
+- El [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e4/clases.jpg][diagrama de clases]] mustra todas las clases con sus atributos, sus métodos y las relaciones presentes entre ellas.
+- El [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e4/secuencia.jpg][diarama de secuencia]] muestra el funcionamiento del método *desgloseParticipantes* que devuelve el número de participantes hombres o mujeres incritos.
