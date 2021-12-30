@@ -73,9 +73,7 @@ En este ejercicio tuvimos que crear clases para cada uno de los integrantes del 
 Cada integrante tendrá unas características específicas que vienen especificadas en el [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Boletin_2_DS_21-22.pdf][pdf]].
 También tuvimos que implementar una clase *Colegio* que contiene la lista de integrantes y los sigueintes métodos:
 - *imprimirRecompensa*\\
-  Devuelve un String con la información de cada integrante y la recompensa que merece según el número de horrocruxes destruidos con este formato:
-  #+begin_src 
-   Hermione Granger(Estudiante de Gryffindor, 3 horrocruxes): 270.0 galeones
+  Devuelve un String con la información de cada integrante y la recompensa que merece según el número de horrocruxes destruidos con este formato: #+begin_src Hermione Granger(Estudiante de Gryffindor, 3 horrocruxes): 270.0 galeones
    Baron Sanguinario(Fantasma de Slytherin, 1 horrocruxes): 160.0 galeones
    Rubeus Hagrid(Guardabosques, 2 horrocruxes): 150.0 galeones
    Minerva McGonagall(Docente de Transformaciones, 1 horrocruxes): 50.0 galeones
@@ -135,3 +133,17 @@ Este ejercicio es diferente a los previos, en lugar de escribir código el traba
 Se dispone de una clase Evento con diferentes métodos para agregar voluntarios y participantes, y conseguir informacion sobre ellos. A su vez tenemos diferentes clases para cada uno de las categorías de personas involucradas en el evento.
 - El [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e4/clases.jpg][diagrama de clases]] mustra todas las clases con sus atributos, sus métodos y las relaciones presentes entre ellas.
 - El [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-B2/src/e4/secuencia.jpg][diarama de secuencia]] muestra el funcionamiento del método *desgloseParticipantes* que devuelve el número de participantes hombres o mujeres incritos.
+
+*** [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-PD][Práctica de diseño]]
+Los ejercicios de la práctica a diferencia de los boletines son más completos, contando con no solo el código en la carpeta [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-PD/src][src]] y los test en la carpeta [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-PD/test][test]] si no también con un informe en la carpeta [[https://github.com/migueldeoleiros/DS-14-02/tree/main/DS-14-02-PD/doc][doc]] donde explicamos los principios y patrones de diseño usados junto con un diagrama de clases y otro de secuencia.\\
+Ambos ejercicios están explicados en extension en el pdf [[https://github.com/migueldeoleiros/DS-14-02/blob/main/Practica_Diseno_DS_21-22.pdf][Practica_Diseno_DS_21-22.pdf]]
+
+**** /Ejercicio 1/ Gestión de Billetes
+En este ejercicio tuvimos que desarrollar un API de gestión de billetes de autobús, con la particularidad de poder buscar billetes que cumplan unos requisitos dados.\\
+Existen cuatro criterios de búsqueda principales, aunque se nos insiste que se puedan ampliar facilmente.
+Los criterios pueden combinarse con cláusulas AND y OR.\\
+Para cumplir con todos los requisitos decidimos usar el patrón *composición*, todos esto viene explicado en nuestro [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-PD/doc/e1/informe.pdf][informe]], con un extenso diagrama de clases.
+
+**** /Ejercicio 2/ Planificador de Tareas 
+Para este último ejercicio tuvimos que implementar un gestor de proyectos donde se proporciona una jerarquía y nosotros debemos proporcionar múltiples algoritmos diferentes para ordenar el arbol de tareas con diferentes criterios.\\
+Usamos el patrón estrategia para poder encapsular los algoritmos de ordenación con una interfaz única y facilitar añadir otros algoritmos en un hipotético futuro. De nuevo, esto lo explicamos en extensión en el [[https://github.com/migueldeoleiros/DS-14-02/blob/main/DS-14-02-PD/doc/e2/informe.pdf][informe]] 
